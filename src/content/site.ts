@@ -29,6 +29,22 @@ export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
 ).replace(/\/+$/, "");
 
+/**
+ * Sub-path the site is served from, e.g. "/ZakahAdvisor-Website" on the GitHub
+ * Pages preview. Empty for a normal root deployment. next/link applies this
+ * automatically; plain anchors have to be prefixed with `rootHref`.
+ */
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+/** Builds a root-relative href that survives a base path. */
+export const rootHref = (path: string) => `${basePath}/${path.replace(/^\//, "")}`;
+
+/**
+ * Resolves a file in `public/`. `next/image` does not apply the base path to an
+ * unoptimized `src`, so every public asset reference goes through here.
+ */
+export const asset = rootHref;
+
 export const navItems = [
   { label: "Why It Matters", href: "#why-it-matters" },
   { label: "How We Audit", href: "#how-we-audit" },

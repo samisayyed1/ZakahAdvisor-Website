@@ -169,6 +169,32 @@ not a config change.
 
 ---
 
+## Public preview (GitHub Pages)
+
+`.github/workflows/deploy-pages.yml` publishes a preview on every push to
+`main`:
+
+**https://samisayyed1.github.io/ZakahAdvisor-Website/**
+
+It is a **preview, not production**. Pages serves static files from a repository
+sub-path, so that build runs in export mode (`NEXT_EXPORT=1`): no image
+optimizer, no response headers, and no checkout links — the tier buttons render
+disabled there, exactly as they do in any unconfigured environment. Production
+goes to a Next.js host via `npm run build:production`.
+
+To reproduce the export locally:
+
+```bash
+NEXT_EXPORT=1 NEXT_PUBLIC_BASE_PATH=/ZakahAdvisor-Website \
+  NEXT_PUBLIC_SITE_URL=https://samisayyed1.github.io/ZakahAdvisor-Website \
+  npm run build      # writes ./out
+```
+
+Note that `next/image` does not apply a base path to an unoptimized `src`, so
+every reference into `public/` goes through `asset()` in `src/content/site.ts`.
+
+---
+
 ## Deployment
 
 1. Set `NEXT_PUBLIC_SITE_URL` to the canonical origin, e.g.

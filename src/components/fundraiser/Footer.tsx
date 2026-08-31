@@ -1,6 +1,6 @@
 import { Logo } from "@/components/brand/Logo";
 import { TrackedLink } from "@/components/ui/TrackedLink";
-import { navItems, site } from "@/content/site";
+import { navItems, rootHref, site } from "@/content/site";
 
 /**
  * Footer.
@@ -14,8 +14,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-za-dark-canvas text-za-dark-text">
-      <div className="za-shell py-14 sm:py-16">
+    <footer className="za-dark-ground bg-za-dark-canvas text-za-dark-text">
+      <div className="za-shell pt-14 pb-[calc(3.5rem+env(safe-area-inset-bottom))] sm:py-16">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-20">
           <div>
             <Logo variant="inverse" className="h-10 w-auto" />
@@ -41,7 +41,7 @@ export function Footer() {
                         home page the browser treats it as a same-document
                         fragment and simply scrolls. */}
                     <a
-                      href={`/${item.href}`}
+                      href={rootHref(item.href)}
                       className="text-[0.9375rem] text-za-dark-text transition-colors duration-200 hover:text-za-gold"
                     >
                       {item.label}

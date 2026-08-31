@@ -16,7 +16,7 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative isolate overflow-hidden bg-za-evergreen pt-28 pb-16 text-za-on-dark sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28"
+      className="za-dark-ground relative isolate overflow-hidden bg-za-evergreen pt-28 pb-16 text-za-on-dark sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28"
     >
       {/* Structure, at 2–5% intensity. */}
       <div
@@ -40,8 +40,8 @@ export function Hero() {
         <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
           {/* Copy ------------------------------------------------------- */}
           <div className="za-rise">
-            <p className="za-eyebrow flex items-center gap-3 text-za-gold">
-              <span aria-hidden="true" className="h-px w-7 bg-za-gold/60" />
+            <p className="za-eyebrow flex items-start gap-3 text-za-gold">
+              <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
               An independent Zakah accountability initiative
             </p>
 
@@ -60,8 +60,8 @@ export function Hero() {
               count!
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <CtaButton location="hero" />
+            <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <CtaButton location="hero" className="w-full sm:w-auto" />
               <SecondaryLink href="#solution" tone="dark">
                 See how we protect Zakah
                 <ArrowDownIcon className="size-4" />

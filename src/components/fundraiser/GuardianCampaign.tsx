@@ -30,8 +30,8 @@ export function GuardianCampaign() {
       <div className="za-shell">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-20">
           <div>
-            <p className="za-eyebrow flex items-center gap-3 text-za-gold">
-              <span aria-hidden="true" className="h-px w-7 bg-za-gold/60" />
+            <p className="za-eyebrow flex items-start gap-3 text-za-gold">
+              <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
               The call
             </p>
 
@@ -62,7 +62,7 @@ export function GuardianCampaign() {
             </p>
 
             <div className="mt-10">
-              <CtaButton location="campaign" />
+              <CtaButton location="campaign" className="w-full sm:w-auto" />
             </div>
           </div>
 
@@ -109,7 +109,7 @@ export function GuardianCampaign() {
         <ScriptureBlock
           scripture={baqarah}
           tone="dark"
-          intro="Allah ﷻ commands us to give from the best of what we have earned:"
+          intro="Allah ﷻ commands us to give from the best of what we have earned:"
           className="mt-16"
         />
       </div>

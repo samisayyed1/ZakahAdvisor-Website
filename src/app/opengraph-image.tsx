@@ -7,6 +7,9 @@ export const alt =
   "Zakah Advisor — The $200 Billion Trust. Independent Zakah charity audits and education.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+// The card never varies, so it is generated once at build time. Required
+// explicitly by `output: "export"` (the GitHub Pages preview build).
+export const dynamic = "force-static";
 
 /**
  * Branded social-sharing card.

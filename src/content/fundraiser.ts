@@ -130,7 +130,7 @@ export const capabilities: Capability[] = [
     id: "forensic-auditing",
     icon: "audit",
     title: "Forensic Charity Auditing",
-    body: "We strip away the emotional marketing. We dig into public tax returns, transparency reports, and governance structures. We verify end-to-end compliance with the 8 Quranic categories and expose administrative bloat.",
+    body: "We strip away the emotional marketing. We dig into public tax returns, transparency reports, and governance structures. We verify end‑to‑end compliance with the 8 Quranic categories and expose administrative bloat.",
   },
   {
     id: "financial-precision",
@@ -150,7 +150,7 @@ export const capabilities: Capability[] = [
     icon: "independence",
     title: "Zero Institutional Bias",
     arabicName: "Ikhlas",
-    body: "We are entirely independent. We accept absolutely no commissions, kickbacks, or institutional funding from the charities we audit. Our loyalty is strictly to Allah ﷻ, and then to you, the donor.",
+    body: "We are entirely independent. We accept absolutely no commissions, kickbacks, or institutional funding from the charities we audit. Our loyalty is strictly to Allah ﷻ, and then to you, the donor.",
   },
 ];
 

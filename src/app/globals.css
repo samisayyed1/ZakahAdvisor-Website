@@ -63,6 +63,11 @@
   --ease-za: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
+/* Focus ring colour, swapped per ground by .za-dark-ground below. */
+:root {
+  --za-focus: var(--color-za-green);
+}
+
 /* ---------------------------------------------------------------------------
    Base
    --------------------------------------------------------------------------- */
@@ -108,9 +113,12 @@
     text-wrap: pretty;
   }
 
-  /* Visible, high-contrast focus on every interactive element. */
+  /* Visible focus on every interactive element. The ring colour follows the
+     ground it lands on so it always clears WCAG 2.2's 3:1 for indicators:
+     Institutional Green on light (9.4:1), Audit Gold on Deep Evergreen (5.6:1).
+     Audit Gold on white would have been 2.5:1. */
   :focus-visible {
-    outline: 3px solid var(--color-za-gold);
+    outline: 3px solid var(--za-focus);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -228,4 +236,9 @@
     opacity: 1;
     stroke-dashoffset: 0;
   }
+}
+
+/* Marks a Deep Evergreen / dark-canvas ground, so descendants focus in gold. */
+@utility za-dark-ground {
+  --za-focus: var(--color-za-gold);
 }

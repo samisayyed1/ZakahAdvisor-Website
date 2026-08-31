@@ -33,8 +33,8 @@ export function Independence() {
       <div className="za-shell">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="za-eyebrow flex items-center gap-3 text-za-gold">
-              <span aria-hidden="true" className="h-px w-7 bg-za-gold/60" />
+            <p className="za-eyebrow flex items-start gap-3 text-za-gold">
+              <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
               Independence
             </p>
 
@@ -43,7 +43,7 @@ export function Independence() {
               className="za-h2 mt-6 text-balance text-za-on-dark"
             >
               Why We Refuse Charity Money{" "}
-              <span className="text-za-luminous-ink">
+              <span className="block text-za-luminous-ink">
                 (And Why We Need YOU)
               </span>
             </h2>
@@ -92,7 +92,7 @@ export function Independence() {
             </p>
 
             <div className="mt-9">
-              <CtaButton location="independence" />
+              <CtaButton location="independence" className="w-full sm:w-auto" />
               <p className="za-measure-tight mt-4 text-sm text-za-on-dark-muted">
                 Help us preserve the third pillar of Islam by funding our
                 independent charity audits and educational hubs.

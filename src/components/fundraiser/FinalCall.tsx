@@ -28,8 +28,8 @@ export function FinalCall() {
 
       <div className="za-shell">
         <div className="max-w-3xl">
-          <p className="za-eyebrow flex items-center gap-3 text-za-gold">
-            <span aria-hidden="true" className="h-px w-7 bg-za-gold/60" />
+          <p className="za-eyebrow flex items-start gap-3 text-za-gold">
+            <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
             The final verdict
           </p>
 
@@ -38,7 +38,7 @@ export function FinalCall() {
           </h2>
 
           <p className="za-lede za-measure mt-7 text-za-on-dark-muted">
-            The Prophet ﷺ warned us that on the Day of Judgement, unpurified
+            The Prophet ﷺ warned us that on the Day of Judgement, unpurified
             wealth will manifest as a terrifying punishment. We cannot afford to
             be careless with the third pillar of our religion.
           </p>
@@ -66,7 +66,7 @@ export function FinalCall() {
           </p>
 
           <div className="mt-10">
-            <CtaButton location="final" />
+            <CtaButton location="final" className="w-full sm:w-auto" />
             <p className="za-measure-tight mt-4 text-sm text-za-on-dark-muted">
               Help us preserve the third pillar of Islam by funding our
               independent charity audits and educational hubs.

@@ -9,24 +9,28 @@ import { track } from "@/lib/analytics";
 /**
  * Mobile-only sticky call to action.
  *
- * It appears once the hero has scrolled away, gets out of the way again while
- * the support tiers are on screen (so it never covers the buttons it points
- * at), respects the safe-area inset, and can be dismissed. Small viewports only
- * — the desktop header CTA is always visible.
+ * It appears once the hero has scrolled away and steps aside again wherever the
+ * page already puts a full-size CTA in front of the reader — the support tiers
+ * and the closing section — so it never covers the buttons it points at, and
+ * never sits on top of the footer. It respects the safe-area inset and can be
+ * dismissed. Small viewports only; the desktop header CTA is always visible.
  */
+
+/** Sections that already carry their own CTA, so the bar stands down. */
+const QUIET_ZONES = ["support", "final"];
+
 export function StickyCta() {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
     const hero = document.getElementById("top");
-    const support = document.getElementById("support");
     if (!hero) return;
 
     let heroPassed = false;
-    let supportInView = false;
+    const quiet = new Set<string>();
 
-    const sync = () => setVisible(heroPassed && !supportInView);
+    const sync = () => setVisible(heroPassed && quiet.size === 0);
 
     const heroObserver = new IntersectionObserver(
       ([entry]) => {
@@ -37,18 +41,36 @@ export function StickyCta() {
     );
     heroObserver.observe(hero);
 
-    let supportObserver: IntersectionObserver | undefined;
-    if (support) {
-      supportObserver = new IntersectionObserver(([entry]) => {
-        supportInView = entry.isIntersecting;
+    const quietObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const id = entry.target.id;
+        if (entry.isIntersecting) quiet.add(id);
+        else quiet.delete(id);
+      }
+      sync();
+    });
+
+    for (const id of QUIET_ZONES) {
+      const element = document.getElementById(id);
+      if (element) quietObserver.observe(element);
+    }
+
+    // The footer sits below the last quiet zone; keep the bar away from it too.
+    const footer = document.querySelector("footer");
+    let footerObserver: IntersectionObserver | undefined;
+    if (footer) {
+      footerObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) quiet.add("footer");
+        else quiet.delete("footer");
         sync();
       });
-      supportObserver.observe(support);
+      footerObserver.observe(footer);
     }
 
     return () => {
       heroObserver.disconnect();
-      supportObserver?.disconnect();
+      quietObserver.disconnect();
+      footerObserver?.disconnect();
     };
   }, []);
 
@@ -65,7 +87,7 @@ export function StickyCta() {
       // in the tab order behind the page.
       inert={!visible}
     >
-      <div className="border-t border-za-hairline bg-za-surface/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md">
+      <div className="border-t border-za-hairline bg-za-surface/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-16px_rgba(26,26,26,0.35)] backdrop-blur-md">
         <div className="flex items-center gap-3">
           <a
             href={SUPPORT_ANCHOR}

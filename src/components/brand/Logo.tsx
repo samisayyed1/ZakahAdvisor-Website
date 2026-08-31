@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { asset } from "@/content/site";
+
 /**
  * The approved Zakah Advisor logo.
  *
@@ -44,7 +46,7 @@ export function Logo({
 }: LogoProps) {
   return (
     <Image
-      src={SOURCES[variant]}
+      src={asset(SOURCES[variant])}
       alt={decorative ? "" : "Zakah Advisor"}
       aria-hidden={decorative || undefined}
       // Intrinsic ratio of the delivered artwork (3.156:1). Set explicitly so
@@ -65,7 +67,7 @@ export function LogoIcon({
 }: LogoProps) {
   return (
     <Image
-      src={ICON_SOURCES[variant]}
+      src={asset(ICON_SOURCES[variant])}
       alt={decorative ? "" : "Zakah Advisor"}
       aria-hidden={decorative || undefined}
       width={3000}

@@ -52,7 +52,7 @@ export function Threats() {
 
           <ScriptureBlock
             scripture={anfal}
-            intro="Allah ﷻ explicitly warns us about mishandling our sacred duties:"
+            intro="Allah ﷻ explicitly warns us about mishandling our sacred duties:"
             className="mt-12"
           />
 
@@ -61,7 +61,7 @@ export function Threats() {
           </p>
 
           <div className="mt-9">
-            <CtaButton location="threats" />
+            <CtaButton location="threats" className="w-full sm:w-auto" />
             <p className="za-measure-tight mt-4 text-sm text-za-muted">
               Help us preserve the third pillar of Islam by funding our
               independent charity audits and educational hubs.

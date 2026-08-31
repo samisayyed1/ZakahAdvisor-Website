@@ -12,7 +12,7 @@ import type { ReactNode } from "react";
 const tones = {
   canvas: "bg-za-canvas text-za-text",
   surface: "bg-za-surface text-za-text",
-  evergreen: "bg-za-evergreen text-za-on-dark",
+  evergreen: "za-dark-ground bg-za-evergreen text-za-on-dark",
 } as const;
 
 type Tone = keyof typeof tones;
@@ -84,10 +84,10 @@ export function SectionHeading({
   return (
     <div className={`flex flex-col ${alignment} ${className}`}>
       {eyebrow ? (
-        <p className={`za-eyebrow mb-4 flex items-center gap-3 ${eyebrowTone}`}>
+        <p className={`za-eyebrow mb-4 flex items-start gap-3 ${eyebrowTone}`}>
           <span
             aria-hidden="true"
-            className={`h-px w-7 ${isDark ? "bg-za-gold/60" : "bg-za-gold-ink/50"}`}
+            className={`mt-[0.58em] h-px w-7 ${isDark ? "bg-za-gold/60" : "bg-za-gold-ink/50"}`}
           />
           {eyebrow}
         </p>

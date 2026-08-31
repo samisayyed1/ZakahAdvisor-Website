@@ -4,6 +4,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { CheckIcon } from "@/components/brand/Icons";
 import { TierButton } from "@/components/fundraiser/TierButton";
 import { supportTiers } from "@/content/fundraiser";
+import { asset } from "@/content/site";
 import {
   DONATION_ENV_VARS,
   isDonationConfigured,
@@ -53,10 +54,11 @@ export function SupportTiers() {
     <Section id="support" tone="canvas" spacing="loose" labelledBy="support-title">
       <div className="za-shell">
         <SectionHeading
-          eyebrow="Choose your monthly impact"
+          eyebrow="Support tiers"
           id="support-title"
-          title="Whether you are a student or a seasoned investor, your Sadaqah is the engine that drives this mission."
-          className="max-w-4xl"
+          title="Choose Your Monthly Impact"
+          lede="Whether you are a student or a seasoned investor, your Sadaqah is the engine that drives this mission."
+          className="max-w-3xl"
         />
 
         {/* Developer-facing only. Never rendered in a production build. */}
@@ -126,14 +128,14 @@ export function SupportTiers() {
             {/* Tangible proof of the reward: the approved cover of the
                 38-question self-audit. The checklist itself stays behind the
                 fundraising flow — it is not published to a public URL. */}
-            <div className="relative flex items-center justify-center overflow-hidden border-t border-za-hairline bg-za-evergreen p-8 lg:border-t-0 lg:border-l">
+            <div className="relative order-first flex items-center justify-center overflow-hidden border-b border-za-hairline bg-za-evergreen p-7 sm:p-8 lg:order-none lg:border-b-0 lg:border-l">
               <Image
-                src="/fundraiser/zakah-self-audit-checklist-cover.png"
+                src={asset("/fundraiser/zakah-self-audit-checklist-cover.png")}
                 alt="Cover of the Zakah Advisor donor checklist: “What Your Charity Isn’t Telling You — The Ultimate Zakah Self-Audit”, 38 essential questions to verify before you donate."
                 width={800}
                 height={1024}
-                sizes="(min-width: 1024px) 320px, (min-width: 640px) 300px, 70vw"
-                className="h-auto w-full max-w-[17rem] rounded-za shadow-za-lift"
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 240px, 208px"
+                className="h-auto w-full max-w-[13rem] rounded-za shadow-za-lift sm:max-w-[15rem] lg:max-w-[17rem]"
               />
             </div>
           </div>
@@ -172,7 +174,7 @@ export function SupportTiers() {
                 tier={tier.id}
                 tierName={tier.name}
                 amountLabel={tier.amountLabel}
-                className="mt-8"
+                className="mt-auto pt-8"
               />
             </li>
           ))}

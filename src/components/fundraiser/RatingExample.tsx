@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { asset } from "@/content/site";
 
 /**
  * The charity rating card, extracted from the fundraiser document at its
@@ -35,15 +36,23 @@ export function RatingExample() {
               </span>
             </div>
 
-            <div className="overflow-x-auto overscroll-x-contain">
+            <div className="relative">
+              <div className="overflow-x-auto overscroll-x-contain">
               <Image
-                src="/fundraiser/charity-rating-example.png"
+                src={asset("/fundraiser/charity-rating-example.png")}
                 alt="Example Zakah Advisor charity rating report. It shows an overall rating of B, 84 out of 100, built from four core-area grades: registered charity, financial accountability, Zakat policy compliance, and governance and leadership. A side panel lists the organisation's country, focus, chief executive, charity registration and tax-receipt eligibility, and a scores table breaks the total down by core area."
                 width={1024}
                 height={567}
                 quality={90}
                 sizes="(min-width: 1024px) 1024px, 100vw"
-                className="h-auto w-full min-w-[38rem] max-w-none"
+                  className="h-auto w-full min-w-[38rem] max-w-none"
+                />
+              </div>
+
+              {/* Soft edge: signals there is more report to the right. */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-za-surface to-transparent lg:hidden"
               />
             </div>
           </div>

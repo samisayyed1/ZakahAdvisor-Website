@@ -42,8 +42,8 @@ export function Solution() {
 
       <div className="za-shell">
         <div className="max-w-4xl">
-          <p className="za-eyebrow flex items-center gap-3 text-za-gold">
-            <span aria-hidden="true" className="h-px w-7 bg-za-gold/60" />
+          <p className="za-eyebrow flex items-start gap-3 text-za-gold">
+            <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
             The solution
           </p>
 

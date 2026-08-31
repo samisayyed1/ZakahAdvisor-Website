@@ -102,8 +102,8 @@ export default function LegalPage() {
 
             {/* Document ------------------------------------------------- */}
             <article>
-              <p className="za-eyebrow flex items-center gap-3 text-za-gold-ink">
-                <span aria-hidden="true" className="h-px w-7 bg-za-gold-ink/50" />
+              <p className="za-eyebrow flex items-start gap-3 text-za-gold-ink">
+                <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold-ink/50" />
                 Legal
               </p>
 

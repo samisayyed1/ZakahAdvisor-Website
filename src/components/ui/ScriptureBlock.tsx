@@ -13,7 +13,7 @@ import type { Scripture } from "@/content/scripture";
 type ScriptureBlockProps = {
   scripture: Scripture;
   tone?: "light" | "dark";
-  /** Introduces the passage, e.g. "Allah ﷻ explicitly warns us…". */
+  /** Introduces the passage, e.g. "Allah ﷻ explicitly warns us…". */
   intro?: string;
   className?: string;
 };
@@ -48,7 +48,7 @@ export function ScriptureBlock({
           <p
             dir="rtl"
             lang="ar"
-            className={`font-arabic text-[clamp(1.35rem,1.05rem+1.35vw,2.05rem)] leading-[2.05] ${arabicTone}`}
+            className={`font-arabic text-[clamp(1.5rem,1.24rem+1.15vw,2.05rem)] leading-[2.05] ${arabicTone}`}
           >
             {scripture.arabic}
           </p>
