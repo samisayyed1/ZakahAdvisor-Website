@@ -1,0 +1,46 @@
+LOGO BRAND SPECIFICATIONS
+
+Company:
+Zakah Advisor
+
+
+WHITE BACKGROUND VERSION
+
+(GREEN)
+HEX: #2E4D3D
+RGB: 46, 77, 61
+CMYK: 88, 61, 87, 38
+
+(GOLD)
+HEX: #C5A059
+RGB: 197, 160, 89
+CMYK: 27, 40, 74, 0
+
+DARK BACKGROUND VERSION
+
+(GREEN)
+HEX: #7B9B57
+RGB: 123, 155, 87
+CMYK: 60, 29, 82, 0
+
+(GOLD)
+HEX: #C5A059
+RGB: 197, 160, 89
+CMYK: 27, 40, 74, 0
+
+TYPOGRAPHY
+
+Primary Font:
+adineue PRO Cyr BOLD
+
+All text elements have been converted to outlines/shapes in the delivered AI and EPS files.
+
+DELIVERED FILES
+
+✓ AI (Text Outlined)
+✓ EPS (Text Outlined)
+✓ SVG
+✓ PNG Transparent
+✓ Monochrome Black Version
+✓ Monochrome White Version
+✓ Favicon/Icon Version (1:1)

@@ -3,16 +3,17 @@ node_modules/
 .pnp/
 .pnp.js
 
-# Build output
-dist/
-build/
-out/
-.next/
-.nuxt/
-.output/
-.svelte-kit/
+# Next.js
+/.next/
+/out/
+/build/
+next-env.d.ts
+*.tsbuildinfo
 
-# Environment
+# Deployment
+.vercel
+
+# Environment — never commit real values; see .env.example
 .env
 .env.local
 .env.*.local
