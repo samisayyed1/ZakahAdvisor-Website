@@ -1,5 +1,7 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ZWatermark } from "@/components/brand/Motifs";
+import { SectionMedia } from "@/components/ui/SectionMedia";
+import { sectionMedia } from "@/content/fundraiser";
 
 const fronts = [
   {
@@ -89,6 +91,10 @@ export function WhyItMatters() {
             </p>
           </div>
         </div>
+
+        {/* Full width, below the grid: the heading here is sticky, so the slot
+            sits under the section rather than inside a column that scrolls. */}
+        <SectionMedia media={sectionMedia["why-it-matters"]} />
       </div>
     </Section>
   );

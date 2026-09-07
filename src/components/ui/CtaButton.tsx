@@ -8,10 +8,14 @@ import { CTA_LABEL, SUPPORT_ANCHOR } from "@/content/site";
 /**
  * The single primary call to action.
  *
- * Every "Become a Zakah Guardian" button on the page behaves identically: it
- * moves the visitor to the support-tier section, and it records where the click
- * came from so the tier CTAs are the only thing that ever starts a checkout.
- * Identical buttons never behave differently.
+ * Every "Donate Now" button on the page behaves identically: it moves the
+ * visitor to the support-tier section, and it records where the click came from
+ * so the tier CTAs are the only thing that ever starts a checkout. Identical
+ * buttons never behave differently.
+ *
+ * Orange is the default and is reserved for this control. Anything else that
+ * happens to be clickable uses an outline variant, so the page never offers the
+ * reader two things that look equally like the primary action.
  */
 
 const base =
@@ -21,8 +25,16 @@ const base =
   "ease-[var(--ease-za)] active:translate-y-px";
 
 const variants = {
+  /* Action Orange, the conversion colour adopted 2026-09-01. Near-black label
+     on the resting fill (5.12:1); the hover deepens the fill and flips the
+     label to white (5.51:1), because a dark label cannot survive a hover step
+     large enough to feel like one. Ratios are derived in globals.css. */
+  orange:
+    "bg-za-orange text-za-text hover:bg-za-orange-hover hover:text-white " +
+    "shadow-[0_1px_0_rgba(0,0,0,0.08)]",
   /* Audit Gold with near-black text: 7.1:1, and 5.6:1 against the hover shade.
-     White on gold would be 2.5:1, so it is never used. */
+     White on gold would be 2.5:1, so it is never used. Retained for any action
+     that must not compete with the donation CTA. */
   gold:
     "bg-za-gold text-za-text hover:bg-za-gold-hover " +
     "shadow-[0_1px_0_rgba(0,0,0,0.06)]",
@@ -47,7 +59,7 @@ type CtaButtonProps = {
 
 export function CtaButton({
   location,
-  variant = "gold",
+  variant = "orange",
   children = CTA_LABEL,
   className = "",
   href = SUPPORT_ANCHOR,

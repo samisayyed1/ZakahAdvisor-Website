@@ -1,6 +1,7 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { capabilityIcons } from "@/components/brand/Icons";
-import { capabilities } from "@/content/fundraiser";
+import { SectionMedia } from "@/components/ui/SectionMedia";
+import { capabilities, sectionMedia } from "@/content/fundraiser";
 
 /**
  * The four operating principles.
@@ -19,6 +20,8 @@ export function Capabilities() {
           title="We do the heavy, exhausting work of financial verification so you do not have to."
           className="max-w-4xl"
         />
+
+        <SectionMedia media={sectionMedia.capabilities} />
 
         <ul className="mt-14 grid gap-4 sm:grid-cols-2">
           {capabilities.map((capability) => {

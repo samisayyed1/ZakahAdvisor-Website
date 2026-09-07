@@ -141,6 +141,41 @@ Design tokens — colours, type ramp, radii, shadows, measure — are centralise
 `src/app/globals.css`. Components use tokens; no component contains a raw hex
 value.
 
+### Action Orange
+
+Following the internal meeting of 2026-09-01, the primary call to action is
+Action Orange (`--color-za-orange`), not Audit Gold. The two colours have
+separate jobs and are not interchangeable:
+
+| Colour                     | Job                                                              |
+| -------------------------- | ---------------------------------------------------------------- |
+| Action Orange `#e2670a`    | The donation action, and nothing else                            |
+| Audit Gold `#c5a059`       | Brand accent — eyebrow rules, numerals, scripture rules          |
+
+The button label is near-black at rest (5.12:1) and flips to white on hover
+(5.51:1), because the fill has to deepen further than a dark label can survive
+before the hover reads as feedback. Every ratio is derived in the comments
+around the tokens; if you change the hex, re-derive them.
+
+---
+
+## Section imagery
+
+Each major section has an image slot beneath its title, rendered by
+`<SectionMedia />` and configured in `sectionMedia` (`src/content/fundraiser.ts`).
+
+**Adding an image is a content edit, not a development task:**
+
+1. Drop the file into `public/fundraiser/`.
+2. On the matching entry in `sectionMedia`, set `src`, `alt`, and the file's
+   intrinsic `width` and `height`.
+
+That is the whole change. A slot whose `src` is `null` renders nothing — a quiet
+section is preferable to a placeholder, and stock photography of unnamed
+beneficiaries must never appear on this page. Every entry carries a `brief`
+describing the artwork it is waiting on, and `npm run dev` prints the
+outstanding list at the foot of the page.
+
 ---
 
 ## Analytics

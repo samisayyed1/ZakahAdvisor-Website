@@ -22,7 +22,7 @@ type TierButtonProps = {
   tier: TierId;
   tierName: string;
   amountLabel: string;
-  /** The entry-point tier gets the solid gold treatment. */
+  /** The featured tier gets the solid Action Orange treatment. */
   prominent?: boolean;
   className?: string;
 };
@@ -43,7 +43,7 @@ export function TierButton({
   const url = getCheckoutUrl(tier);
 
   const style = prominent
-    ? "bg-za-gold text-za-text hover:bg-za-gold-hover"
+    ? "bg-za-orange text-za-text hover:bg-za-orange-hover hover:text-white"
     : "border border-za-green/30 text-za-green hover:border-za-green hover:bg-za-green hover:text-white";
 
   const label = (

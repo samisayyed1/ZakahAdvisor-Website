@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CheckIcon } from "@/components/brand/Icons";
 import { TierButton } from "@/components/fundraiser/TierButton";
-import { supportTiers } from "@/content/fundraiser";
+import { FEATURED_TIER_LABEL, supportTiers } from "@/content/fundraiser";
 import { asset } from "@/content/site";
 import {
   DONATION_ENV_VARS,
@@ -42,13 +42,17 @@ function RewardList({
 /**
  * Monthly support tiers.
  *
- * The $10 entry point is given the widest, most prominent treatment because it
- * is the campaign's stated entry pledge — not because it is the most chosen.
- * No tier is labelled "most popular", no annual discount is offered, and there
- * is no countdown: none of that exists in the approved material.
+ * The internal meeting of 2026-09-01 moved the prominent card from $10 to $25
+ * to anchor the ask higher. $10 remains the campaign's entry pledge and is still
+ * named as such — in the campaign section, on the goal plate, and on its own
+ * card here — so the higher anchor never hides the cheaper door.
+ *
+ * The badge wording is deliberate; see FEATURED_TIER_LABEL. No annual discount
+ * is offered and there is no countdown: neither exists in the approved material.
  */
 export function SupportTiers() {
-  const [entry, ...rest] = supportTiers;
+  const featured = supportTiers.find((tier) => tier.featured) ?? supportTiers[0];
+  const rest = supportTiers.filter((tier) => tier !== featured);
 
   return (
     <Section id="support" tone="canvas" spacing="loose" labelledBy="support-title">
@@ -81,45 +85,47 @@ export function SupportTiers() {
           </div>
         ) : null}
 
-        {/* Entry tier — $10 The Foundation --------------------------------- */}
+        {/* Featured tier — $25 The Educator -------------------------------- */}
         <article
-          aria-labelledby="tier-entry-title"
-          className="mt-12 overflow-hidden rounded-za-xl border border-za-green/25 bg-za-surface shadow-za-card"
+          aria-labelledby="tier-featured-title"
+          // A 2px orange edge and a lifted shadow carry the prominence, so the
+          // card reads as the recommendation before a single word is read.
+          className="mt-12 overflow-hidden rounded-za-xl border-2 border-za-orange/45 bg-za-surface shadow-za-lift"
         >
           <div className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
             <div className="p-7 sm:p-10">
-              <p className="za-eyebrow text-za-gold-ink">
-                The campaign entry point
+              <p className="za-eyebrow inline-flex items-center rounded-za-sm bg-za-orange px-2.5 py-1 text-za-text">
+                {FEATURED_TIER_LABEL}
               </p>
 
               <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <p className="font-display text-[clamp(2.25rem,1.9rem+1.6vw,3rem)] leading-none font-bold tracking-[-0.03em] text-za-text tabular-nums">
-                  {entry.amountLabel}
+                  {featured.amountLabel}
                 </p>
                 <p className="text-[0.9375rem] font-medium text-za-muted">
                   / month
                 </p>
                 <h3
-                  id="tier-entry-title"
+                  id="tier-featured-title"
                   className="w-full font-display text-[1.25rem] font-semibold text-za-green"
                 >
-                  {entry.name}
+                  {featured.name}
                 </h3>
               </div>
 
               <p className="za-measure mt-6 text-[0.9375rem] leading-relaxed text-za-muted">
-                {entry.impact}
+                {featured.impact}
               </p>
 
               <div className="mt-8 border-t border-za-hairline pt-7">
                 <p className="za-eyebrow mb-4 text-za-muted">Your reward</p>
-                <RewardList rewards={entry.rewards} tone="gold" />
+                <RewardList rewards={featured.rewards} tone="gold" />
               </div>
 
               <TierButton
-                tier={entry.id}
-                tierName={entry.name}
-                amountLabel={entry.amountLabel}
+                tier={featured.id}
+                tierName={featured.name}
+                amountLabel={featured.amountLabel}
                 prominent
                 className="mt-8 sm:max-w-xs"
               />
@@ -148,6 +154,14 @@ export function SupportTiers() {
               key={tier.id}
               className="flex flex-col rounded-za-lg border border-za-hairline bg-za-surface p-7 transition-[border-color,box-shadow] duration-300 hover:border-za-green/25 hover:shadow-za-card"
             >
+              {/* Rendered on every card, filled on one: the reserved line keeps
+                  all five prices on a common baseline while still naming the
+                  campaign's entry pledge now that $25 holds the large card.
+                  Gold, not orange — orange belongs to the action alone. */}
+              <p className="za-eyebrow mb-3 min-h-[1.4em] text-za-gold-ink">
+                {tier.entryPoint ? "Entry pledge" : null}
+              </p>
+
               <div className="flex flex-wrap items-baseline gap-x-2">
                 <p className="font-display text-[1.875rem] leading-none font-bold tracking-[-0.03em] text-za-text tabular-nums">
                   {tier.amountLabel}

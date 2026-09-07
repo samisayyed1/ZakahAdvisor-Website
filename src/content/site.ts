@@ -55,4 +55,16 @@ export const navItems = [
 /** Every primary call to action resolves here. */
 export const SUPPORT_ANCHOR = "#support";
 
-export const CTA_LABEL = "Become a Zakah Guardian";
+/**
+ * The primary call to action.
+ *
+ * Changed from "Become a Zakah Guardian" at the internal meeting of 2026-09-01:
+ * the identity framing was landing after the click, not before it, so the label
+ * now names the action instead of the role. "Guardian" survives everywhere it
+ * is actually earned — the campaign section, the tier names and the FAQ.
+ *
+ * Every instance points at the same destination, so every instance carries the
+ * same words: identical links with identical names is the correct behaviour
+ * here, not a duplicate-label problem.
+ */
+export const CTA_LABEL = "Donate Now";

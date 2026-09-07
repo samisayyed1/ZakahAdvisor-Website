@@ -94,7 +94,7 @@ export function StickyCta() {
             onClick={() =>
               track({ name: "guardian_cta_clicked", location: "sticky-mobile" })
             }
-            className="inline-flex min-h-12 flex-1 items-center justify-center rounded-za bg-za-gold px-5 py-3 text-[0.9375rem] font-semibold text-za-text transition-colors duration-200 hover:bg-za-gold-hover"
+            className="inline-flex min-h-12 flex-1 items-center justify-center rounded-za bg-za-orange px-5 py-3 text-[0.9375rem] font-semibold text-za-text transition-colors duration-200 hover:bg-za-orange-hover hover:text-white"
           >
             {CTA_LABEL}
           </a>

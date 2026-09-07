@@ -2,6 +2,8 @@ import { Section } from "@/components/ui/Section";
 import { AuditRings } from "@/components/brand/Motifs";
 import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
 import { CtaButton } from "@/components/ui/CtaButton";
+import { SectionMedia } from "@/components/ui/SectionMedia";
+import { sectionMedia } from "@/content/fundraiser";
 import { baqarah } from "@/content/scripture";
 
 /**
@@ -105,6 +107,8 @@ export function GuardianCampaign() {
             </div>
           </div>
         </div>
+
+        <SectionMedia media={sectionMedia.guardians} />
 
         <ScriptureBlock
           scripture={baqarah}
