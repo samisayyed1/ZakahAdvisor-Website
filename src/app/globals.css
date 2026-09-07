@@ -13,6 +13,42 @@
   --color-za-luminous: #7b9b57; /* Luminous Green (dark canvases) */
   --color-za-gold-hover: #b08d4c; /* Audit Gold, 10% darker */
 
+  /* Action Orange — the single conversion colour --------------------------
+     Adopted at the internal meeting of 2026-09-01: primary calls to action move
+     from Audit Gold to orange for prominence. Hue 25.8°, deliberately the same
+     warm family as Audit Gold (39.4°) at higher chroma, so it reads as the loud
+     cousin of the brand accent rather than a foreign colour.
+
+     Orange is reserved for the donation action and nothing else. Audit Gold
+     keeps its accent role — eyebrow rules, numerals, scripture rules — so the
+     page still has exactly one thing that looks primary-and-clickable.
+
+     Measured:
+       #1a1a1a on orange .............. 5.12:1  (AA text)
+       orange on --color-za-canvas .... 3.26:1  (AA non-text, WCAG 1.4.11)
+       orange on --color-za-surface ... 3.40:1
+       orange on --color-za-evergreen . 4.06:1
+     Audit Gold reached only 2.35:1 against canvas, so the fill is now a
+     discernible shape on every ground the page uses, which it previously
+     was not.
+
+     Fill only. As text on canvas this colour carries 3.26:1 and fails AA, so it
+     never sets words on a light surface — the same rule Audit Gold lives under.
+     If orange-family text is ever needed there, add a darker ink token rather
+     than reusing this one. */
+  --color-za-orange: #e2670a;
+
+  /* Hover deepens the fill and flips the label to white: at this luminance
+     white reaches 5.51:1, where #1a1a1a would fall to 3.10:1. Keeping the dark
+     label would have capped the hover step at ΔL 0.038 — under half the Audit
+     Gold step (0.089) and too small to register as feedback.
+       #ffffff on orange-hover ........ 5.51:1  (AA text)
+       orange-hover on canvas ......... 5.27:1
+     On Deep Evergreen the hover fill sits at 2.50:1. The resting state already
+     carries the boundary at 4.06:1 and the control is identified by the time it
+     is hovered, so 1.4.11 is met at rest, which is where it applies. */
+  --color-za-orange-hover: #ad4c09;
+
   /* Deep Evergreen — the ground colour of the approved dark-background logo.
      Reserved for the hero, the independence statement, the final call and the
      footer. It never replaces Institutional Green as the brand token. */

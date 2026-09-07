@@ -1,7 +1,8 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
 import { CtaButton } from "@/components/ui/CtaButton";
-import { modernAssets, threats } from "@/content/fundraiser";
+import { SectionMedia } from "@/components/ui/SectionMedia";
+import { modernAssets, sectionMedia, threats } from "@/content/fundraiser";
 import { anfal } from "@/content/scripture";
 
 export function Threats() {
@@ -16,6 +17,8 @@ export function Threats() {
           title="The Two Major Threats to Your Zakah"
           className="max-w-3xl"
         />
+
+        <SectionMedia media={sectionMedia.threats} />
 
         {/* Threat 1 — The Charity Black Box -------------------------------- */}
         <article

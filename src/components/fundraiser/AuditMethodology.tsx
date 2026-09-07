@@ -1,5 +1,6 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { auditPillars } from "@/content/fundraiser";
+import { SectionMedia } from "@/components/ui/SectionMedia";
+import { auditPillars, sectionMedia } from "@/content/fundraiser";
 
 /**
  * The formal four-pillar charity assessment methodology.
@@ -23,6 +24,8 @@ export function AuditMethodology() {
           lede="Every charity we audit is assessed against the same rigorous four-pillar methodology, and every grade traces back to it."
           className="max-w-3xl"
         />
+
+        <SectionMedia media={sectionMedia["how-we-audit"]} />
 
         <ol className="mt-14 grid gap-px overflow-hidden rounded-za-lg border border-za-hairline bg-za-hairline sm:grid-cols-2 lg:grid-cols-4">
           {auditPillars.map((pillar) => (

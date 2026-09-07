@@ -201,9 +201,33 @@ export type SupportTier = {
   name: string;
   /** Marks the campaign entry point. Not a popularity claim. */
   entryPoint?: boolean;
+  /**
+   * The tier given the widest, most prominent card and the solid orange button.
+   * Exactly one tier carries this.
+   */
+  featured?: boolean;
   impact: string;
   rewards: string[];
 };
+
+/**
+ * The badge on the featured tier.
+ *
+ * The internal meeting of 2026-09-01 asked for the featured package to be
+ * labelled "most common". The anchoring it was asked to achieve is implemented
+ * in full — $25 now takes the large card, $10 drops into the grid — but the
+ * wording is "Recommended" rather than "Most common", because the campaign has
+ * not launched and there is therefore no donor distribution behind a
+ * most-common claim.
+ *
+ * An organisation whose product is catching charities in unverifiable claims
+ * cannot open its own funnel with one. "Recommended" is a statement of our
+ * position, which is true today, and it anchors identically.
+ *
+ * If the meeting wants the original wording once real donor data exists, this
+ * constant is the only edit required.
+ */
+export const FEATURED_TIER_LABEL = "Recommended";
 
 export const supportTiers: SupportTier[] = [
   {
@@ -223,6 +247,7 @@ export const supportTiers: SupportTier[] = [
     amount: 25,
     amountLabel: "$25",
     name: "The Educator",
+    featured: true,
     impact:
       "You directly sponsor the research and publication of our deep-dive resources, such as our self-audit reports and modern Fiqh breakdowns, curing the financial illiteracy in our Ummah.",
     rewards: [
@@ -318,3 +343,108 @@ export const faqs: FaqItem[] = [
  */
 export const zakahEstimateSource =
   "“Analysis: A faith-based aid revolution in the Muslim world?” IRINnews, 1 June 2012.";
+
+/* ---------------------------------------------------------------------------
+   Section imagery
+   --------------------------------------------------------------------------- */
+
+/**
+ * One image slot, rendered by <SectionMedia /> directly beneath a section title.
+ *
+ * `src` is `null` while the section is awaiting approved artwork, and the slot
+ * renders nothing until it is set. See the note in SectionMedia.tsx for why an
+ * empty slot is preferred to a placeholder here.
+ */
+export type SectionMediaAsset = {
+  /** Path under `public/`, resolved through `asset()`. `null` until approved. */
+  src: string | null;
+  /**
+   * Describes what the image shows, for a reader who cannot see it. It must not
+   * introduce a claim the page does not already make.
+   */
+  alt: string;
+  /** Intrinsic pixel dimensions of the file, so the slot reserves its space. */
+  width: number;
+  height: number;
+  caption?: string;
+  /** What this slot is for, so the right artwork is commissioned for it. */
+  brief: string;
+};
+
+export type SectionMediaSlot =
+  | "why-it-matters"
+  | "threats"
+  | "solution"
+  | "how-we-audit"
+  | "capabilities"
+  | "guardians";
+
+/**
+ * The image slots opened by the internal meeting of 2026-09-01.
+ *
+ * Every entry carries the brief it is waiting on. Filling one is a content
+ * edit: drop the file into `public/fundraiser/`, then set `src`, `alt` and the
+ * intrinsic `width`/`height` here. Nothing else changes, and nothing has to be
+ * rebuilt by a developer.
+ *
+ * The two approved assets already in the repository are deliberately not reused
+ * here — the charity rating report and the self-audit cover each already carry
+ * their own section, and repeating them would dilute both.
+ */
+export const sectionMedia: Record<SectionMediaSlot, SectionMediaAsset> = {
+  "why-it-matters": {
+    src: null,
+    alt: "",
+    width: 0,
+    height: 0,
+    brief:
+      "The scale of the trust. A restrained editorial image or data plate for the $200bn figure — not a photograph of identifiable beneficiaries.",
+  },
+  threats: {
+    src: null,
+    alt: "",
+    width: 0,
+    height: 0,
+    brief:
+      "The two threats. A diagram of the charity black box: funds in, no traceable path out.",
+  },
+  solution: {
+    src: null,
+    alt: "",
+    width: 0,
+    height: 0,
+    brief:
+      "The bridge between orthodox scholarship and forensic auditing. Product or process imagery, not stock photography.",
+  },
+  "how-we-audit": {
+    src: null,
+    alt: "",
+    width: 0,
+    height: 0,
+    brief:
+      "The four-pillar methodology, drawn. A single diagram a reader can take at a glance without reading the four cards.",
+  },
+  capabilities: {
+    src: null,
+    alt: "",
+    width: 0,
+    height: 0,
+    brief:
+      "What we do. A screenshot of the live product — calculator, hub or charity directory — once one is approved for publication.",
+  },
+  guardians: {
+    src: null,
+    alt: "",
+    width: 0,
+    height: 0,
+    brief:
+      "The campaign. Artwork for the first 1,000 Zakah Guardians. Works on Deep Evergreen.",
+  },
+};
+
+/** Slots still awaiting approved artwork. Surfaced in development only. */
+export const pendingSectionMedia = (
+  Object.entries(sectionMedia) as [SectionMediaSlot, SectionMediaAsset][]
+)
+  .filter(([, media]) => media.src === null)
+  .map(([slot]) => slot);

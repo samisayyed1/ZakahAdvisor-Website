@@ -1,5 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { AuditGrid, CrescentSweep } from "@/components/brand/Motifs";
+import { SectionMedia } from "@/components/ui/SectionMedia";
+import { sectionMedia } from "@/content/fundraiser";
 import { site } from "@/content/site";
 
 const bridge = [
@@ -64,6 +66,8 @@ export function Solution() {
             auditing.
           </p>
         </div>
+
+        <SectionMedia media={sectionMedia.solution} />
 
         <dl className="mt-14 grid gap-px overflow-hidden rounded-za-lg border border-za-hairline-dark bg-za-hairline-dark sm:grid-cols-3">
           {bridge.map((item) => (

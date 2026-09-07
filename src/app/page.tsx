@@ -14,6 +14,7 @@ import { Faq } from "@/components/fundraiser/Faq";
 import { FinalCall } from "@/components/fundraiser/FinalCall";
 import { Footer } from "@/components/fundraiser/Footer";
 import { StickyCta } from "@/components/fundraiser/StickyCta";
+import { PendingSectionMediaNotice } from "@/components/ui/SectionMedia";
 import { faqs } from "@/content/fundraiser";
 import { site, siteUrl } from "@/content/site";
 
@@ -111,6 +112,7 @@ export default function FundraiserPage() {
         <SupportTiers />
         <Faq />
         <FinalCall />
+        <PendingSectionMediaNotice />
       </main>
 
       <Footer />
