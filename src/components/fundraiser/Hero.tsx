@@ -71,15 +71,13 @@ export function Hero() {
 
           {/* The estimate plate ----------------------------------------- */}
           <figure className="za-rise relative [animation-delay:120ms]">
-            <div className="relative overflow-hidden rounded-za-xl border border-za-hairline-dark bg-white/[0.035] px-6 py-8 sm:px-9 sm:py-10">
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -top-24 -right-24 w-[26rem] text-za-luminous opacity-[0.13]"
-              >
-                <AuditRings className="size-full" />
-              </div>
-
-              <div className="relative">
+            {/* Opaque, not a translucent overlay: the section's own motifs used
+                to show through the plate and cut across the figure. The plate
+                carried a second set of rings of its own on top of that; both
+                are gone, and the number now sits on a clean ground. The hero
+                keeps its texture everywhere outside this plate. */}
+            <div className="relative overflow-hidden rounded-za-xl border border-za-hairline-dark bg-za-evergreen-plate px-6 py-8 sm:px-9 sm:py-10">
+              <div>
                 <div className="flex items-center justify-between gap-4">
                   <p className="za-eyebrow text-za-on-dark-muted">
                     Estimated annual global Zakah

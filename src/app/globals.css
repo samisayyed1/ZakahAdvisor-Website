@@ -54,6 +54,19 @@
      footer. It never replaces Institutional Green as the brand token. */
   --color-za-evergreen: #003334;
 
+  /* The opaque ground for a plate sitting on Deep Evergreen — the hero's
+     estimate figure and the campaign's goal plate.
+
+     This is the exact colour those plates already rendered as: white at 3.5%
+     over Deep Evergreen. Stating it opaquely rather than as a translucent
+     overlay is the point — a near-transparent plate let the section's own
+     background motifs bleed through it and cross the figure it exists to
+     display. Every text ratio on the plate is unchanged by the swap:
+       Audit Gold figure ....... 5.09:1
+       --color-za-on-dark ...... 10.55:1
+       --color-za-on-dark-muted  5.89:1 */
+  --color-za-evergreen-plate: #093a3b;
+
   /* Light UI -------------------------------------------------------------- */
   --color-za-canvas: #fafafa;
   --color-za-surface: #ffffff;

@@ -70,7 +70,9 @@ export function GuardianCampaign() {
 
           {/* Goal plate — a target, not a progress meter. */}
           <div className="lg:pt-16">
-            <div className="rounded-za-xl border border-za-hairline-dark bg-white/[0.035] p-7 sm:p-9">
+            {/* Opaque for the same reason as the hero's estimate plate: the
+                section's rings were showing through and crossing the figure. */}
+            <div className="rounded-za-xl border border-za-hairline-dark bg-za-evergreen-plate p-7 sm:p-9">
               <p className="za-eyebrow text-za-on-dark-muted">
                 Founding Guardians — the goal
               </p>
