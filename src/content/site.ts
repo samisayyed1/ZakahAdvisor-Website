@@ -68,3 +68,32 @@ export const SUPPORT_ANCHOR = "#support";
  * here, not a duplicate-label problem.
  */
 export const CTA_LABEL = "Donate Now";
+
+/**
+ * The numbered sections of the fundraiser page, in page order.
+ *
+ * A section's numeral is its position in this list, so reordering the page
+ * means reordering this list — no number is ever typed into a component. The
+ * hero is deliberately unnumbered: it introduces the page rather than being a
+ * step in it.
+ */
+export const sectionSequence = [
+  "why-it-matters",
+  "donor-fears",
+  "threats",
+  "solution",
+  "rating-example",
+  "how-we-audit",
+  "capabilities",
+  "independence",
+  "guardians",
+  "support",
+  "faq",
+  "final",
+] as const;
+
+export type SectionKey = (typeof sectionSequence)[number];
+
+/** Two-digit numeral for a section, e.g. "01". */
+export const sectionNumber = (key: SectionKey) =>
+  String(sectionSequence.indexOf(key) + 1).padStart(2, "0");

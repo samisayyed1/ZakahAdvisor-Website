@@ -1,17 +1,18 @@
 import type { ReactNode } from "react";
 
 /**
- * Section shell and heading.
+ * Section shell, label and heading.
  *
- * The page alternates deliberately between light editorial ground and Deep
- * Evergreen statement ground. That pacing carries the narrative — problem, then
- * solution, then independence, then action — so tone is an explicit prop rather
- * than something a section decides for itself.
+ * Neighbouring sections never share a ground (landing page review,
+ * 2026-09-15): Deep Teal for the major, high-impact sections, warm off-white
+ * for main content, light green/cream for supporting sections. Tone is an
+ * explicit prop rather than something a section decides for itself, so the
+ * rhythm is set once per section and can be audited straight down the page.
  */
 
 const tones = {
   canvas: "bg-za-canvas text-za-text",
-  surface: "bg-za-surface text-za-text",
+  cream: "bg-za-cream text-za-text",
   evergreen: "za-dark-ground bg-za-evergreen text-za-on-dark",
 } as const;
 
@@ -52,7 +53,56 @@ export function Section({
   );
 }
 
+/**
+ * The first two of the three levels that open every section: a large gold
+ * numeral, then the label. The heading that follows is the third.
+ *
+ * The numeral is decorative sequence, hidden from assistive technology; the
+ * label and heading carry the meaning. Pass the numeral from `sectionNumber()`
+ * in `@/content/site` — never as a literal.
+ */
+export function SectionLabel({
+  number,
+  children,
+  tone = "light",
+  className = "",
+}: {
+  number?: string;
+  children: ReactNode;
+  tone?: "light" | "dark";
+  className?: string;
+}) {
+  const isDark = tone === "dark";
+
+  return (
+    <div className={`flex flex-col ${className}`}>
+      {number ? (
+        <span
+          aria-hidden="true"
+          // Audit Gold on Deep Teal (4.81:1). On the light grounds Audit Gold
+          // falls under the 3:1 large-text floor, so they use the numeral shade.
+          className={`font-display text-[clamp(2.5rem,2.1rem+1.8vw,3.5rem)] leading-none font-bold tracking-[-0.04em] tabular-nums ${
+            isDark ? "text-za-gold" : "text-za-gold-numeral"
+          }`}
+        >
+          {number}
+        </span>
+      ) : null}
+
+      <p
+        className={`za-label ${number ? "mt-3" : ""} ${
+          isDark ? "text-za-on-dark" : "text-za-green"
+        }`}
+      >
+        {children}
+      </p>
+    </div>
+  );
+}
+
 type SectionHeadingProps = {
+  /** Two-digit numeral from `sectionNumber()`. */
+  number?: string;
   eyebrow?: string;
   title: ReactNode;
   /** Rendered as the section's own heading level. */
@@ -65,6 +115,7 @@ type SectionHeadingProps = {
 };
 
 export function SectionHeading({
+  number,
   eyebrow,
   title,
   id,
@@ -75,7 +126,6 @@ export function SectionHeading({
   as: Heading = "h2",
 }: SectionHeadingProps) {
   const isDark = tone === "dark";
-  const eyebrowTone = isDark ? "text-za-gold" : "text-za-gold-ink";
   const titleTone = isDark ? "text-za-on-dark" : "text-za-text";
   const ledeTone = isDark ? "text-za-on-dark-muted" : "text-za-muted";
   const alignment =
@@ -84,13 +134,13 @@ export function SectionHeading({
   return (
     <div className={`flex flex-col ${alignment} ${className}`}>
       {eyebrow ? (
-        <p className={`za-eyebrow mb-4 flex items-start gap-3 ${eyebrowTone}`}>
-          <span
-            aria-hidden="true"
-            className={`mt-[0.58em] h-px w-7 ${isDark ? "bg-za-gold/60" : "bg-za-gold-ink/50"}`}
-          />
+        <SectionLabel
+          number={number}
+          tone={tone}
+          className={`mb-5 ${align === "center" ? "items-center" : "items-start"}`}
+        >
           {eyebrow}
-        </p>
+        </SectionLabel>
       ) : null}
 
       <Heading id={id} className={`za-h2 ${titleTone}`}>

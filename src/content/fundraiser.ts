@@ -438,7 +438,7 @@ export const sectionMedia: Record<SectionMediaSlot, SectionMediaAsset> = {
     width: 0,
     height: 0,
     brief:
-      "The campaign. Artwork for the first 1,000 Zakah Guardians. Works on Deep Evergreen.",
+      "The campaign. Artwork for the first 1,000 Zakah Guardians. Sits on the warm off-white campaign section, beside the Deep Teal goal plate.",
   },
 };
 

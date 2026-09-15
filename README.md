@@ -141,21 +141,34 @@ Design tokens — colours, type ramp, radii, shadows, measure — are centralise
 `src/app/globals.css`. Components use tokens; no component contains a raw hex
 value.
 
-### Action Orange
+### Colour roles
 
-Following the internal meeting of 2026-09-01, the primary call to action is
-Action Orange (`--color-za-orange`), not Audit Gold. The two colours have
-separate jobs and are not interchangeable:
+Set by the landing page review of 2026-09-15. Each colour has one job, and they
+are not interchangeable:
 
-| Colour                     | Job                                                              |
-| -------------------------- | ---------------------------------------------------------------- |
-| Action Orange `#e2670a`    | The donation action, and nothing else                            |
-| Audit Gold `#c5a059`       | Brand accent — eyebrow rules, numerals, scripture rules          |
+| Colour                              | Job                                                              |
+| ----------------------------------- | ---------------------------------------------------------------- |
+| Deep Teal `#003f3d` (`za-evergreen`) | Ground of the major sections; key-statistic plates on light ones |
+| Warm off-white `#f9f6ee` (`za-canvas`) | Ground of main content sections, and the page                  |
+| Light green / cream `#eff2e6` (`za-cream`) | Ground of supporting sections                              |
+| Warm Amber `#f2a900` (`za-amber`)   | The donation action, and nothing else                            |
+| Audit Gold `#c5a059` (`za-gold`)    | Highlights and key statistics; section numerals on Deep Teal     |
+| Olive `#7b9b57` (`za-luminous`)     | Secondary accents                                                |
 
-The button label is near-black at rest (5.12:1) and flips to white on hover
-(5.51:1), because the fill has to deepen further than a dark label can survive
-before the hover reads as feedback. Every ratio is derived in the comments
-around the tokens; if you change the hex, re-derive them.
+Neighbouring sections never share a ground. Amber replaced the Action Orange of
+2026-09-01; it shares a hue with Audit Gold, so the two are told apart by
+saturation — amber never marks a statistic and gold never fills a button. The
+button label stays near-black in every state (8.66:1 at rest, 6.94:1 on hover).
+Every ratio is derived in the comments around the tokens; if you change a hex,
+re-derive them.
+
+### Section labels
+
+Every numbered section opens on three levels: a large gold numeral, the label,
+then the heading. Use `<SectionLabel>` or the `number` prop on
+`<SectionHeading>`, and take the numeral from `sectionNumber()` in
+`src/content/site.ts`. The numbers are positions in `sectionSequence`, so
+reordering the page renumbers it — never type a numeral into a component.
 
 ---
 

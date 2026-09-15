@@ -4,7 +4,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { CheckIcon } from "@/components/brand/Icons";
 import { TierButton } from "@/components/fundraiser/TierButton";
 import { FEATURED_TIER_LABEL, supportTiers } from "@/content/fundraiser";
-import { asset } from "@/content/site";
+import { asset, sectionNumber } from "@/content/site";
 import {
   DONATION_ENV_VARS,
   isDonationConfigured,
@@ -55,9 +55,10 @@ export function SupportTiers() {
   const rest = supportTiers.filter((tier) => tier !== featured);
 
   return (
-    <Section id="support" tone="canvas" spacing="loose" labelledBy="support-title">
+    <Section id="support" tone="cream" spacing="loose" labelledBy="support-title">
       <div className="za-shell">
         <SectionHeading
+          number={sectionNumber("support")}
           eyebrow="Support tiers"
           id="support-title"
           title="Choose Your Monthly Impact"
@@ -88,13 +89,13 @@ export function SupportTiers() {
         {/* Featured tier — $25 The Educator -------------------------------- */}
         <article
           aria-labelledby="tier-featured-title"
-          // A 2px orange edge and a lifted shadow carry the prominence, so the
+          // A 2px amber edge and a lifted shadow carry the prominence, so the
           // card reads as the recommendation before a single word is read.
-          className="mt-12 overflow-hidden rounded-za-xl border-2 border-za-orange/45 bg-za-surface shadow-za-lift"
+          className="mt-12 overflow-hidden rounded-za-xl border-2 border-za-amber/70 bg-za-surface shadow-za-lift"
         >
           <div className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
             <div className="p-7 sm:p-10">
-              <p className="za-eyebrow inline-flex items-center rounded-za-sm bg-za-orange px-2.5 py-1 text-za-text">
+              <p className="za-eyebrow inline-flex items-center rounded-za-sm bg-za-amber px-2.5 py-1 text-za-text">
                 {FEATURED_TIER_LABEL}
               </p>
 
@@ -157,7 +158,7 @@ export function SupportTiers() {
               {/* Rendered on every card, filled on one: the reserved line keeps
                   all five prices on a common baseline while still naming the
                   campaign's entry pledge now that $25 holds the large card.
-                  Gold, not orange — orange belongs to the action alone. */}
+                  Gold, not amber — amber belongs to the action alone. */}
               <p className="za-eyebrow mb-3 min-h-[1.4em] text-za-gold-ink">
                 {tier.entryPoint ? "Entry pledge" : null}
               </p>

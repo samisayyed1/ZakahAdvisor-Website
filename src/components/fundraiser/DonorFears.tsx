@@ -1,5 +1,6 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { donorFears } from "@/content/fundraiser";
+import { sectionNumber } from "@/content/site";
 
 /**
  * The concerns a careful donor actually carries.
@@ -10,9 +11,10 @@ import { donorFears } from "@/content/fundraiser";
  */
 export function DonorFears() {
   return (
-    <Section tone="surface" labelledBy="donor-fears-title">
+    <Section tone="cream" labelledBy="donor-fears-title">
       <div className="za-shell">
         <SectionHeading
+          number={sectionNumber("donor-fears")}
           eyebrow="Before you click donate"
           id="donor-fears-title"
           title="The questions that keep conscientious donors awake."

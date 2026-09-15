@@ -2,6 +2,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { capabilityIcons } from "@/components/brand/Icons";
 import { SectionMedia } from "@/components/ui/SectionMedia";
 import { capabilities, sectionMedia } from "@/content/fundraiser";
+import { sectionNumber } from "@/content/site";
 
 /**
  * The four operating principles.
@@ -12,9 +13,10 @@ import { capabilities, sectionMedia } from "@/content/fundraiser";
  */
 export function Capabilities() {
   return (
-    <Section tone="canvas" labelledBy="capabilities-title">
+    <Section tone="cream" labelledBy="capabilities-title">
       <div className="za-shell">
         <SectionHeading
+          number={sectionNumber("capabilities")}
           eyebrow="What we do"
           id="capabilities-title"
           title="We do the heavy, exhausting work of financial verification so you do not have to."

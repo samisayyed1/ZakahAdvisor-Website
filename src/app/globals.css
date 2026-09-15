@@ -10,66 +10,50 @@
   /* Core brand ------------------------------------------------------------ */
   --color-za-green: #2e4d3d; /* Institutional Green */
   --color-za-gold: #c5a059; /* Audit Gold */
-  --color-za-luminous: #7b9b57; /* Luminous Green (dark canvases) */
+  --color-za-luminous: #7b9b57; /* Luminous Green / Olive — secondary accents. Decorative only on light grounds (2.9:1) */
   --color-za-gold-hover: #b08d4c; /* Audit Gold, 10% darker */
 
-  /* Action Orange — the single conversion colour --------------------------
-     Adopted at the internal meeting of 2026-09-01: primary calls to action move
-     from Audit Gold to orange for prominence. Hue 25.8°, deliberately the same
-     warm family as Audit Gold (39.4°) at higher chroma, so it reads as the loud
-     cousin of the brand accent rather than a foreign colour.
+  /* Action Amber — the single conversion colour ---------------------------
+     Warm Amber #F2A900, set by the landing page review of 2026-09-15. It
+     replaces the Action Orange adopted on 2026-09-01. Reserved for the donation
+     action and nothing else; Audit Gold keeps highlights and key statistics.
 
-     Orange is reserved for the donation action and nothing else. Audit Gold
-     keeps its accent role — eyebrow rules, numerals, scripture rules — so the
-     page still has exactly one thing that looks primary-and-clickable.
+     Amber and Audit Gold share a hue (41.9° and 39.4°). They are told apart by
+     saturation and lightness, not by hue, which is why amber never marks a
+     statistic and gold never fills a button.
 
      Measured:
-       #1a1a1a on orange .............. 5.12:1  (AA text)
-       orange on --color-za-canvas .... 3.26:1  (AA non-text, WCAG 1.4.11)
-       orange on --color-za-surface ... 3.40:1
-       orange on --color-za-evergreen . 4.06:1
-     Audit Gold reached only 2.35:1 against canvas, so the fill is now a
-     discernible shape on every ground the page uses, which it previously
-     was not.
+       #1a1a1a on amber ................ 8.66:1  (AA text)
+       #1a1a1a on amber-hover .......... 6.94:1  (AA text)
+       amber on --color-za-evergreen ... 5.88:1
+       amber on --color-za-canvas ...... 1.86:1
+     The last figure is why a button on a light ground is identified by its
+     label rather than its fill: the label clears AA in every state. Amber is
+     light enough that the label stays near-black through the hover, so unlike
+     the orange it replaces, it never has to flip to white. */
+  --color-za-amber: #f2a900;
+  --color-za-amber-hover: #d99700;
 
-     Fill only. As text on canvas this colour carries 3.26:1 and fails AA, so it
-     never sets words on a light surface — the same rule Audit Gold lives under.
-     If orange-family text is ever needed there, add a darker ink token rather
-     than reusing this one. */
-  --color-za-orange: #e2670a;
+  /* Deep Teal — the ground of the major, high-impact sections (hero, solution,
+     independence, final call) and of the key-statistic plates that sit on the
+     lighter sections. Set to #003F3D by the landing page review of 2026-09-15;
+     it was #003334, the ground of the approved dark-background logo. The
+     inverse logo artwork carries no background of its own, so it sits cleanly
+     on either. The token keeps its historical name so no component churns.
+     It never replaces Institutional Green as the brand token. */
+  --color-za-evergreen: #003f3d;
 
-  /* Hover deepens the fill and flips the label to white: at this luminance
-     white reaches 5.51:1, where #1a1a1a would fall to 3.10:1. Keeping the dark
-     label would have capped the hover step at ΔL 0.038 — under half the Audit
-     Gold step (0.089) and too small to register as feedback.
-       #ffffff on orange-hover ........ 5.51:1  (AA text)
-       orange-hover on canvas ......... 5.27:1
-     On Deep Evergreen the hover fill sits at 2.50:1. The resting state already
-     carries the boundary at 4.06:1 and the control is identified by the time it
-     is hovered, so 1.4.11 is met at rest, which is where it applies. */
-  --color-za-orange-hover: #ad4c09;
-
-  /* Deep Evergreen — the ground colour of the approved dark-background logo.
-     Reserved for the hero, the independence statement, the final call and the
-     footer. It never replaces Institutional Green as the brand token. */
-  --color-za-evergreen: #003334;
-
-  /* The opaque ground for a plate sitting on Deep Evergreen — the hero's
-     estimate figure and the campaign's goal plate.
-
-     This is the exact colour those plates already rendered as: white at 3.5%
-     over Deep Evergreen. Stating it opaquely rather than as a translucent
-     overlay is the point — a near-transparent plate let the section's own
-     background motifs bleed through it and cross the figure it exists to
-     display. Every text ratio on the plate is unchanged by the swap:
-       Audit Gold figure ....... 5.09:1
-       --color-za-on-dark ...... 10.55:1
-       --color-za-on-dark-muted  5.89:1 */
-  --color-za-evergreen-plate: #093a3b;
-
-  /* Light UI -------------------------------------------------------------- */
-  --color-za-canvas: #fafafa;
+  /* Light UI --------------------------------------------------------------
+     The review of 2026-09-15 found the page read as one long white sheet: the
+     old canvas (#fafafa) and surface (#ffffff) were 1.04:1 apart, so
+     neighbouring light sections never visibly changed. Light sections now
+     alternate between two grounds that are distinct in hue, not just value. */
+  /* Warm off-white — main content sections, and the page ground. */
+  --color-za-canvas: #f9f6ee;
+  /* Cards and scripture panels. */
   --color-za-surface: #ffffff;
+  /* Very light green / cream — supporting sections. */
+  --color-za-cream: #eff2e6;
   --color-za-text: #1a1a1a;
   --color-za-muted: #666666;
 
@@ -83,10 +67,17 @@
      Audit Gold reaches only 2.4:1 on white, so it is never used for text on a
      light surface. These tokens keep the gold family legible where it must
      carry words. Ratios are measured against --color-za-canvas / --color-za-evergreen. */
-  --color-za-gold-ink: #7a5f28; /* 5.76:1 on canvas — gold-family text on light */
-  --color-za-on-dark: #e8ede9; /* 11.6:1 on evergreen — body text on dark */
-  --color-za-on-dark-muted: #a9b5ad; /* 6.5:1 on evergreen — secondary on dark */
-  --color-za-luminous-ink: #9dbb79; /* 6.45:1 on evergreen — small accents on dark */
+  --color-za-gold-ink: #7a5f28; /* 5.56:1 on canvas, 5.30:1 on cream — gold-family text on light */
+
+  /* Section numerals on light grounds. On Deep Teal the numerals use Audit Gold
+     itself (4.81:1), but on the light grounds Audit Gold reaches only
+     2.1–2.3:1, under even the 3:1 large-text floor. This is the lightest shade
+     of the same gold that clears it: 3.64:1 on canvas and at least 3.43:1 on
+     cream. Numerals render at 2.5rem and up, so the large-text floor applies. */
+  --color-za-gold-numeral: #9e7b36;
+  --color-za-on-dark: #e8ede9; /* 9.96:1 on Deep Teal — body text on dark */
+  --color-za-on-dark-muted: #a9b5ad; /* 5.57:1 on Deep Teal — secondary on dark */
+  --color-za-luminous-ink: #9dbb79; /* 5.52:1 on Deep Teal — small accents on dark */
   --color-za-hairline: #e4e4e2; /* 1px rules on light */
   --color-za-hairline-dark: #14514f; /* 1px rules on evergreen */
 
@@ -164,7 +155,7 @@
 
   /* Visible focus on every interactive element. The ring colour follows the
      ground it lands on so it always clears WCAG 2.2's 3:1 for indicators:
-     Institutional Green on light (9.4:1), Audit Gold on Deep Evergreen (5.6:1).
+     Institutional Green on warm off-white (8.66:1), Audit Gold on Deep Teal (4.81:1).
      Audit Gold on white would have been 2.5:1. */
   :focus-visible {
     outline: 3px solid var(--za-focus);
@@ -220,6 +211,19 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1.4;
+}
+
+/* The section label: the middle of the three levels that open every section —
+   numeral, label, heading (review, 2026-09-15). Larger and heavier than
+   za-eyebrow, which stays for small in-card labels, so the label reads as its
+   own step rather than as fine print above the heading. */
+@utility za-label {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 0.82rem + 0.25vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.35;
 }
 
 /* Fluid type ramp. clamp() keeps the largest statements from wrecking a 320px

@@ -75,7 +75,7 @@ export function PendingSectionMediaNotice() {
 
   return (
     <div className="za-shell py-10">
-      <div className="rounded-za-lg border border-za-orange/50 bg-za-orange/10 p-5 text-sm text-za-text">
+      <div className="rounded-za-lg border border-za-amber/50 bg-za-amber/10 p-5 text-sm text-za-text">
         <p className="font-semibold">
           Dev: {pendingSectionMedia.length} section image slot
           {pendingSectionMedia.length === 1 ? "" : "s"} awaiting approved

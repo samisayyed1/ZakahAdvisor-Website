@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ChevronIcon } from "@/components/brand/Icons";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { faqs } from "@/content/fundraiser";
+import { sectionNumber } from "@/content/site";
 import { track } from "@/lib/analytics";
 
 /**
@@ -19,10 +20,11 @@ export function Faq() {
   const [openId, setOpenId] = useState<string | null>(faqs[0]?.id ?? null);
 
   return (
-    <Section id="faq" tone="surface" labelledBy="faq-title">
+    <Section id="faq" tone="canvas" labelledBy="faq-title">
       <div className="za-shell">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1.32fr)] lg:gap-20">
           <SectionHeading
+            number={sectionNumber("faq")}
             eyebrow="Questions"
             id="faq-title"
             title="Frequently asked questions"

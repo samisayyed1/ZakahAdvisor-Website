@@ -188,7 +188,7 @@ export function Header() {
                 track({ name: "guardian_cta_clicked", location: "header" });
                 close();
               }}
-              className="mt-4 mb-3 flex min-h-12 items-center justify-center rounded-za bg-za-orange px-6 py-3.5 text-[0.9375rem] font-semibold text-za-text transition-colors duration-200 hover:bg-za-orange-hover hover:text-white"
+              className="mt-4 mb-3 flex min-h-12 items-center justify-center rounded-za bg-za-amber px-6 py-3.5 text-[0.9375rem] font-semibold text-za-text transition-colors duration-200 hover:bg-za-amber-hover"
             >
               {CTA_LABEL}
             </a>

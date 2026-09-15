@@ -1,8 +1,8 @@
-import { Section } from "@/components/ui/Section";
+import { Section, SectionLabel } from "@/components/ui/Section";
 import { AuditGrid, CrescentSweep } from "@/components/brand/Motifs";
 import { SectionMedia } from "@/components/ui/SectionMedia";
 import { sectionMedia } from "@/content/fundraiser";
-import { site } from "@/content/site";
+import { sectionNumber, site } from "@/content/site";
 
 const bridge = [
   {
@@ -44,12 +44,11 @@ export function Solution() {
 
       <div className="za-shell">
         <div className="max-w-4xl">
-          <p className="za-eyebrow flex items-start gap-3 text-za-gold">
-            <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
+          <SectionLabel number={sectionNumber("solution")} tone="dark">
             The solution
-          </p>
+          </SectionLabel>
 
-          <h2 id="solution-title" className="za-h2 mt-6 text-za-on-dark">
+          <h2 id="solution-title" className="za-h2 mt-5 text-za-on-dark">
             {site.domain}
           </h2>
 

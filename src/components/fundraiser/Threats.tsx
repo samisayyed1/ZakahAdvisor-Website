@@ -4,6 +4,7 @@ import { CtaButton } from "@/components/ui/CtaButton";
 import { SectionMedia } from "@/components/ui/SectionMedia";
 import { modernAssets, sectionMedia, threats } from "@/content/fundraiser";
 import { anfal } from "@/content/scripture";
+import { sectionNumber } from "@/content/site";
 
 export function Threats() {
   const [blackBox, financialGap] = threats;
@@ -12,6 +13,7 @@ export function Threats() {
     <Section id="threats" tone="canvas" spacing="loose" labelledBy="threats-title">
       <div className="za-shell">
         <SectionHeading
+          number={sectionNumber("threats")}
           eyebrow="The problem"
           id="threats-title"
           title="The Two Major Threats to Your Zakah"

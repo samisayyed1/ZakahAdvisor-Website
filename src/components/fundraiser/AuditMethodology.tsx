@@ -1,6 +1,7 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { SectionMedia } from "@/components/ui/SectionMedia";
 import { auditPillars, sectionMedia } from "@/content/fundraiser";
+import { sectionNumber } from "@/content/site";
 
 /**
  * The formal four-pillar charity assessment methodology.
@@ -15,9 +16,10 @@ import { auditPillars, sectionMedia } from "@/content/fundraiser";
  */
 export function AuditMethodology() {
   return (
-    <Section id="how-we-audit" tone="surface" labelledBy="methodology-title">
+    <Section id="how-we-audit" tone="canvas" labelledBy="methodology-title">
       <div className="za-shell">
         <SectionHeading
+          number={sectionNumber("how-we-audit")}
           eyebrow="The methodology"
           id="methodology-title"
           title="Four pillars. One rating."
