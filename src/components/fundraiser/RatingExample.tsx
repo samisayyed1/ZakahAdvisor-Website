@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { asset } from "@/content/site";
+import { asset, sectionNumber } from "@/content/site";
 
 /**
  * The charity rating card, extracted from the fundraiser document at its
@@ -12,9 +12,10 @@ import { asset } from "@/content/site";
  */
 export function RatingExample() {
   return (
-    <Section tone="canvas" labelledBy="rating-title">
+    <Section tone="cream" labelledBy="rating-title">
       <div className="za-shell">
         <SectionHeading
+          number={sectionNumber("rating-example")}
           eyebrow="What an audit produces"
           id="rating-title"
           title="A rating you can actually read."

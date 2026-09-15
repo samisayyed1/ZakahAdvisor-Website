@@ -1,8 +1,9 @@
-import { Section } from "@/components/ui/Section";
+import { Section, SectionLabel } from "@/components/ui/Section";
 import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { CrescentSweep } from "@/components/brand/Motifs";
 import { hadithZakah } from "@/content/scripture";
+import { sectionNumber } from "@/content/site";
 
 /**
  * The closing section.
@@ -28,12 +29,11 @@ export function FinalCall() {
 
       <div className="za-shell">
         <div className="max-w-3xl">
-          <p className="za-eyebrow flex items-start gap-3 text-za-gold">
-            <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
+          <SectionLabel number={sectionNumber("final")} tone="dark">
             The final verdict
-          </p>
+          </SectionLabel>
 
-          <h2 id="final-title" className="za-h2 mt-6 text-za-on-dark">
+          <h2 id="final-title" className="za-h2 mt-5 text-za-on-dark">
             Your wealth is a test.
           </h2>
 

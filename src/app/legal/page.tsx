@@ -46,7 +46,7 @@ function LegalHeader() {
           </Link>
           <Link
             href={`/${SUPPORT_ANCHOR}`}
-            className="inline-flex min-h-11 items-center justify-center rounded-za bg-za-orange px-5 py-2.5 text-sm font-semibold text-za-text transition-colors duration-200 hover:bg-za-orange-hover hover:text-white"
+            className="inline-flex min-h-11 items-center justify-center rounded-za bg-za-amber px-5 py-2.5 text-sm font-semibold text-za-text transition-colors duration-200 hover:bg-za-amber-hover"
           >
             {CTA_LABEL}
           </Link>

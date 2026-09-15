@@ -1,10 +1,10 @@
-import { Section } from "@/components/ui/Section";
-import { AuditRings } from "@/components/brand/Motifs";
+import { Section, SectionLabel } from "@/components/ui/Section";
 import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { SectionMedia } from "@/components/ui/SectionMedia";
 import { sectionMedia } from "@/content/fundraiser";
 import { baqarah } from "@/content/scripture";
+import { sectionNumber } from "@/content/site";
 
 /**
  * The campaign block.
@@ -12,49 +12,48 @@ import { baqarah } from "@/content/scripture";
  * The goal of 1,000 is stated; no current count and no progress bar is shown.
  * There is no data source for a live figure, and a fabricated one would be
  * exactly the kind of thing this organisation exists to catch.
+ *
+ * Moved from Deep Teal to warm off-white by the landing page review of
+ * 2026-09-15. It directly follows the independence statement, which is also
+ * Deep Teal, and the review asks that no two neighbouring sections share a
+ * ground. The weight moves onto the goal plate instead, which is now a Deep
+ * Teal key-statistic plate — the same treatment as the estimate plate in
+ * section 01. The background rings went with the dark ground.
  */
 export function GuardianCampaign() {
   return (
     <Section
       id="guardians"
-      tone="evergreen"
+      tone="canvas"
       spacing="loose"
       labelledBy="guardians-title"
-      className="overflow-hidden border-t border-za-hairline-dark"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-64 -right-64 -z-10 w-[46rem] text-za-gold opacity-[0.09]"
-      >
-        <AuditRings className="size-full" />
-      </div>
 
       <div className="za-shell">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-20">
           <div>
-            <p className="za-eyebrow flex items-start gap-3 text-za-gold">
-              <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
+            <SectionLabel number={sectionNumber("guardians")}>
               The call
-            </p>
+            </SectionLabel>
 
-            <h2 id="guardians-title" className="za-h2 mt-6 text-za-on-dark">
+            <h2 id="guardians-title" className="za-h2 mt-5 text-za-text">
               Join the FIRST 1,000 Zakah Guardians
             </h2>
 
-            <p className="za-lede za-measure mt-7 text-za-on-dark">
+            <p className="za-lede za-measure mt-7 text-za-text">
               We are launching an urgent global campaign to find 1,000
               visionaries willing to pledge just $10 a month in recurring
               Sadaqah.
             </p>
 
-            <p className="za-measure mt-6 text-za-on-dark-muted">
+            <p className="za-measure mt-6 text-za-muted">
               This is not just about keeping a website online. This is about
               building a sustainable, global authority that forces the entire
               Islamic charity sector to elevate its standards through strict
               accountability.
             </p>
 
-            <p className="za-measure mt-6 text-za-on-dark-muted">
+            <p className="za-measure mt-6 text-za-muted">
               By funding our operations, you are actively purifying the
               ecosystem of Islamic charity. You earn a share of the reward for
               every single dollar we successfully route away from mishandling
@@ -70,9 +69,9 @@ export function GuardianCampaign() {
 
           {/* Goal plate — a target, not a progress meter. */}
           <div className="lg:pt-16">
-            {/* Opaque for the same reason as the hero's estimate plate: the
-                section's rings were showing through and crossing the figure. */}
-            <div className="rounded-za-xl border border-za-hairline-dark bg-za-evergreen-plate p-7 sm:p-9">
+            {/* A Deep Teal key-statistic plate on a light section, matching
+                the estimate plate in section 01. */}
+            <div className="za-dark-ground rounded-za-xl bg-za-evergreen p-7 text-za-on-dark shadow-za-lift sm:p-9">
               <p className="za-eyebrow text-za-on-dark-muted">
                 Founding Guardians — the goal
               </p>
@@ -114,7 +113,6 @@ export function GuardianCampaign() {
 
         <ScriptureBlock
           scripture={baqarah}
-          tone="dark"
           intro="Allah ﷻ commands us to give from the best of what we have earned:"
           className="mt-16"
         />

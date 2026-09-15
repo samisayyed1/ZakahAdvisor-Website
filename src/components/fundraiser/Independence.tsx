@@ -1,7 +1,8 @@
-import { Section } from "@/components/ui/Section";
+import { Section, SectionLabel } from "@/components/ui/Section";
 import { AuditGrid } from "@/components/brand/Motifs";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { CloseIcon } from "@/components/brand/Icons";
+import { sectionNumber } from "@/content/site";
 
 /** The three funding sources Zakah Advisor refuses, per the source copy. */
 const refusals = [
@@ -11,7 +12,7 @@ const refusals = [
 ];
 
 /**
- * The differentiation section. Deep Evergreen, maximum weight — this is the
+ * The differentiation section. Deep Teal, maximum weight — this is the
  * argument the whole fundraiser rests on, and it bridges into the ask.
  */
 export function Independence() {
@@ -33,14 +34,13 @@ export function Independence() {
       <div className="za-shell">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="za-eyebrow flex items-start gap-3 text-za-gold">
-              <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
+            <SectionLabel number={sectionNumber("independence")} tone="dark">
               Independence
-            </p>
+            </SectionLabel>
 
             <h2
               id="independence-title"
-              className="za-h2 mt-6 text-balance text-za-on-dark"
+              className="za-h2 mt-5 text-balance text-za-on-dark"
             >
               Why We Refuse Charity Money{" "}
               <span className="block text-za-luminous-ink">
