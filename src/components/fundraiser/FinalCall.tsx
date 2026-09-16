@@ -47,6 +47,7 @@ export function FinalCall() {
         <ScriptureBlock
           scripture={hadithZakah}
           tone="dark"
+          intro="Narrated Abu Huraira: Allah's Messenger (ﷺ) said:"
           className="mt-12 max-w-4xl"
         />
 

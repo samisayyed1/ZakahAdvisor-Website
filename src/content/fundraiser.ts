@@ -68,7 +68,7 @@ export type Threat = {
 
 export const threats: Threat[] = [
   {
-    index: "01",
+    index: "1",
     id: "charity-black-box",
     title: "The Charity Black Box",
     paragraphs: [
@@ -80,7 +80,7 @@ export const threats: Threat[] = [
       "If an organisation is using your Zakah to pay for corporate retreats, bloated executive salaries, or vague “awareness campaigns,” your third pillar is in severe jeopardy.",
   },
   {
-    index: "02",
+    index: "2",
     id: "modern-financial-gap",
     title: "The Modern Financial Gap",
     paragraphs: [
@@ -239,7 +239,7 @@ export const supportTiers: SupportTier[] = [
     impact:
       "Your contribution sustains our core digital infrastructure, keeping our dynamic Zakah calculators and educational hubs online and free for millions of Muslims globally.",
     rewards: [
-      "A PDF copy of our 38 questions checklist “What your charity isn’t telling you: The Ultimate Zakah Self Audit”",
+      "Receive a PDF copy of our 38 questions checklist “What your charity isn’t telling you: The Ultimate Zakah Self Audit”",
     ],
   },
   {
@@ -251,7 +251,7 @@ export const supportTiers: SupportTier[] = [
     impact:
       "You directly sponsor the research and publication of our deep-dive resources, such as our self-audit reports and modern Fiqh breakdowns, curing the financial illiteracy in our Ummah.",
     rewards: [
-      "Our 174 page publication “Is your Zakah Valid? 37 Mistakes Most Muslims Make (And how to fix them)”",
+      "Receive our 174 page publication “Is your Zakah Valid? 37 Mistakes Most Muslims Make (And how to fix them)”",
       "The 38 questions checklist",
     ],
   },
