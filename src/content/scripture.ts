@@ -36,5 +36,5 @@ export const hadithZakah: Scripture = {
     "«مَنْ آتَاهُ اللَّهُ مَالاً فَلَمْ يُؤَدِّ زَكَاتَهُ مُثِّلَ لَهُ مَالُهُ يَوْمَ الْقِيَامَةِ شُجَاعًا أَقْرَعَ لَهُ زَبِيبَتَانِ يُطَوَّقُهُ يَوْمَ الْقِيَامَةِ، ثُمَّ يَأْخُذُ بِلِهْزِمَتَيْهِ ـ يَعْنِي بِشِدْقَيْهِ ـ ثُمَّ يَقُولُ أَنَا مَالُكَ أَنَا كَنْزُكَ»",
   translation:
     "Whoever is made wealthy by Allah and does not pay the Zakah of his wealth, then on the Day of Resurrection his wealth will be made like a bald-headed poisonous male snake with two black spots over the eyes. The snake will encircle his neck and bite his cheeks and say, \u2018I am your wealth, I am your treasure.\u2019",
-  citation: "Narrated Abu Huraira. Narrated by Bukhari",
+  citation: "Narrated by Bukhari",
 };

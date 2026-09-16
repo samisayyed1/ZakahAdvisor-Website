@@ -71,6 +71,14 @@ export function Hero() {
               <ArrowDownIcon className="size-4" />
             </SecondaryLink>
           </div>
+
+          {/* The approved copy pairs this line with every CTA, including this
+              one. The hero's wording differs from the other four in the source
+              document and is reproduced as written. */}
+          <p className="za-measure-tight mt-4 text-sm text-za-on-dark-muted">
+            Help us preserve the third pillar of Islam by funding our
+            independent charity audits & Zakah educational hub.
+          </p>
         </div>
       </div>
     </section>

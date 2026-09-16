@@ -37,7 +37,7 @@ export function GuardianCampaign() {
             </SectionLabel>
 
             <h2 id="guardians-title" className="za-h2 mt-5 text-za-text">
-              Join the FIRST 1,000 Zakah Guardians
+              Join the FIRST 1,000 Zakah Guardians!
             </h2>
 
             <p className="za-lede za-measure mt-7 text-za-text">
