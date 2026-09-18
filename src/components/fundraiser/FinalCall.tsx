@@ -1,5 +1,6 @@
 import { Section, SectionLabel } from "@/components/ui/Section";
 import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
+import { Reveal } from "@/components/ui/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { CrescentSweep } from "@/components/brand/Motifs";
 import { hadithZakah } from "@/content/scripture";
@@ -44,12 +45,13 @@ export function FinalCall() {
           </p>
         </div>
 
-        <ScriptureBlock
-          scripture={hadithZakah}
-          tone="dark"
-          intro="Narrated Abu Huraira: Allah's Messenger (ﷺ) said:"
-          className="mt-12 max-w-4xl"
-        />
+        <Reveal className="mt-12 max-w-4xl">
+          <ScriptureBlock
+            scripture={hadithZakah}
+            tone="dark"
+            intro="Narrated Abu Huraira: Allah's Messenger (ﷺ) said:"
+          />
+        </Reveal>
 
         <div className="mt-14 max-w-3xl">
           <p className="za-measure text-za-on-dark-muted">

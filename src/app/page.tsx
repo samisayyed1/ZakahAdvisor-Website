@@ -72,7 +72,7 @@ function StructuredData() {
         "@type": "Answer",
         text: [
           ...faq.answer,
-          ...(faq.list ?? []).map((item) => `${item.title} — ${item.body}`),
+          ...(faq.list ?? []).map((item) => `${item.title}: ${item.body}`),
         ].join(" "),
       },
     })),

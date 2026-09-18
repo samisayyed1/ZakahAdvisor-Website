@@ -28,7 +28,7 @@ export function DonorFears() {
               key={fear.id}
               // The fifth concern fills the remaining track rather than leaving
               // a hole — five items, no invented sixth card.
-              className={`flex flex-col rounded-za-lg border border-za-hairline bg-za-surface p-7 transition-colors duration-300 hover:border-za-green/25 hover:bg-za-canvas lg:p-8 ${
+              className={`flex flex-col rounded-za-lg border border-za-hairline bg-za-surface p-7 lg:p-8 ${
                 index === donorFears.length - 1 ? "sm:col-span-2" : ""
               }`}
             >

@@ -49,7 +49,7 @@ export function TierButton({
   const label = (
     <>
       Give {amountLabel} a month
-      <span className="sr-only"> — {tierName}</span>
+      <span className="sr-only">, {tierName}</span>
     </>
   );
 
