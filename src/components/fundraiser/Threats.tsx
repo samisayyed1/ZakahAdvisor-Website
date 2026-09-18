@@ -1,5 +1,6 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
+import { Reveal } from "@/components/ui/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { SectionMedia } from "@/components/ui/SectionMedia";
 import { modernAssets, sectionMedia, threats } from "@/content/fundraiser";
@@ -55,11 +56,12 @@ export function Threats() {
             </div>
           </div>
 
-          <ScriptureBlock
-            scripture={anfal}
-            intro="Allah ﷻ explicitly warns us about mishandling our sacred duties:"
-            className="mt-12"
-          />
+          <Reveal className="mt-12">
+            <ScriptureBlock
+              scripture={anfal}
+              intro="Allah ﷻ explicitly warns us about mishandling our sacred duties:"
+            />
+          </Reveal>
 
           <p className="za-measure mt-12 font-display text-[clamp(1.125rem,1.02rem+0.5vw,1.5rem)] leading-snug font-semibold text-za-text">
             {blackBox.closing}

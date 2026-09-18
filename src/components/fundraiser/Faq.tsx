@@ -109,8 +109,8 @@ export function Faq() {
                                 <span className="text-za-muted">
                                   <span className="font-semibold text-za-text">
                                     {item.title}
-                                  </span>{" "}
-                                  — {item.body}
+                                  </span>
+                                  : {item.body}
                                 </span>
                               </li>
                             ))}

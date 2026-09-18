@@ -30,7 +30,7 @@ export const donorFears: DonorFear[] = [
     id: "calculation",
     question: "What if I calculated it wrong?",
     detail:
-      "Inventory valued at retail instead of wholesale, a property treated as rental rather than resale, a crypto holding priced at buy-in instead of the spot price on your due date — each is a quiet arithmetic error with a religious consequence.",
+      "Inventory valued at retail instead of wholesale, a property treated as rental rather than resale, a crypto holding priced at buy-in instead of the spot price on your due date. Each is a quiet arithmetic error with a religious consequence.",
   },
   {
     id: "deductions",

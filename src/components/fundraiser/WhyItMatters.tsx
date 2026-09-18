@@ -110,6 +110,7 @@ export function WhyItMatters() {
         {/* The question, beside the figure that raises it. */}
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
           <SectionHeading
+            className="lg:order-2"
             number={sectionNumber("why-it-matters")}
             eyebrow="The scale of the trust"
             id="why-it-matters-title"
@@ -121,31 +122,35 @@ export function WhyItMatters() {
             }
           />
 
-          <EstimatePlate />
+          <div className="lg:order-1">
+            <EstimatePlate />
+          </div>
         </div>
 
-        {/* The answer. */}
-        <div className="mt-16 border-t border-za-hairline pt-14 lg:mt-24 lg:pt-20">
-          <p className="za-measure font-display text-[clamp(1.25rem,1.1rem+0.7vw,1.625rem)] leading-snug font-semibold text-za-text">
+        {/* The answer. Dark ground: this is the argument the section exists to
+            make, and on a light panel it was reading as a description people
+            scrolled past (review, 2026-09-17). */}
+        <div className="za-dark-ground mt-16 rounded-za-xl bg-za-evergreen px-6 py-12 text-za-on-dark sm:px-10 sm:py-14 lg:mt-24 lg:px-14 lg:py-16">
+          <p className="za-measure font-display text-[clamp(1.25rem,1.1rem+0.7vw,1.625rem)] leading-snug font-semibold text-za-on-dark">
             Because the modern Islamic charity sector is{" "}
-            <span className="text-za-green">fundamentally broken</span>, and
-            the third pillar of our religion is being compromised on two major
-            fronts:
+            <span className="text-za-luminous-ink">fundamentally broken</span>,
+            and the third pillar of our religion is being compromised on two
+            major fronts:
           </p>
 
           <ol className="mt-10 grid gap-4 sm:grid-cols-2">
             {fronts.map((front) => (
               <li
                 key={front.number}
-                className="flex items-center gap-5 rounded-za-lg border border-za-hairline bg-za-surface p-6 shadow-za-card sm:p-7"
+                className="flex items-center gap-5 rounded-za-lg border border-za-hairline-dark bg-white/[0.04] p-6 sm:p-7"
               >
                 <span
                   aria-hidden="true"
-                  className="font-display text-[2.5rem] leading-none font-bold text-za-gold-numeral tabular-nums"
+                  className="font-display text-[2.5rem] leading-none font-bold text-za-gold tabular-nums"
                 >
                   {front.number}
                 </span>
-                <span className="font-display text-[clamp(1.125rem,1.05rem+0.35vw,1.3125rem)] leading-snug font-semibold text-za-text">
+                <span className="font-display text-[clamp(1.125rem,1.05rem+0.35vw,1.3125rem)] leading-snug font-semibold text-za-on-dark">
                   {front.title}
                 </span>
               </li>
@@ -153,8 +158,8 @@ export function WhyItMatters() {
           </ol>
 
           <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16">
-            <p className="za-measure text-[1.0625rem] leading-relaxed text-za-muted">
-              <strong className="font-semibold text-za-text">
+            <p className="za-measure text-[1.0625rem] leading-relaxed text-za-on-dark-muted">
+              <strong className="font-semibold text-za-on-dark">
                 We are terrified of making a mistake in our Wudu,
               </strong>{" "}
               yet we regularly calculate our Zakah on the back of a napkin in
@@ -162,7 +167,7 @@ export function WhyItMatters() {
               hope Allah accepts it.
             </p>
 
-            <p className="za-measure border-l-2 border-za-gold pl-6 font-display text-[clamp(1.125rem,1.02rem+0.5vw,1.5rem)] leading-snug font-semibold text-za-text">
+            <p className="za-measure border-l-2 border-za-gold pl-6 font-display text-[clamp(1.125rem,1.02rem+0.5vw,1.5rem)] leading-snug font-semibold text-za-on-dark">
               Ignorance about Zakah is not bliss. It is an active hazard to your
               Akhirah.
             </p>

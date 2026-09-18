@@ -33,7 +33,7 @@ export function RatingExample() {
                 <span className="size-2.5 rounded-full bg-za-hairline" />
               </span>
               <span className="za-eyebrow ml-2 truncate text-za-muted">
-                Zakah Advisor — Charity Rating Report
+                Zakah Advisor Charity Rating Report
               </span>
             </div>
 

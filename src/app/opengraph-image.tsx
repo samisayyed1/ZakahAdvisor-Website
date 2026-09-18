@@ -4,7 +4,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Zakah Advisor — The $200 Billion Trust. Independent Zakah charity audits and education.";
+  "Zakah Advisor: The $200 Billion Trust. Independent Zakah charity audits and education.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 // The card never varies, so it is generated once at build time. Required
@@ -136,7 +136,7 @@ export default async function OpengraphImage() {
               color: "#A9B5AD",
             }}
           >
-            ZakahAdvisor.org — Independent charity audits &amp; Zakah education
+            ZakahAdvisor.org · Independent charity audits &amp; Zakah education
           </div>
         </div>
       </div>

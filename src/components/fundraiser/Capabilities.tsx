@@ -32,7 +32,7 @@ export function Capabilities() {
             return (
               <li
                 key={capability.id}
-                className="flex flex-col rounded-za-lg border border-za-hairline bg-za-surface p-7 transition-[border-color,box-shadow] duration-300 hover:border-za-green/25 hover:shadow-za-card lg:p-9"
+                className="flex flex-col rounded-za-lg border border-za-hairline bg-za-surface p-7 lg:p-9"
               >
                 <Icon className="size-11 shrink-0" />
 

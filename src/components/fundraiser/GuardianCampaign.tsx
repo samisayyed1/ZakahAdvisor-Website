@@ -1,5 +1,6 @@
 import { Section, SectionLabel } from "@/components/ui/Section";
 import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
+import { Reveal } from "@/components/ui/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { SectionMedia } from "@/components/ui/SectionMedia";
 import { sectionMedia } from "@/content/fundraiser";
@@ -73,7 +74,7 @@ export function GuardianCampaign() {
                 the estimate plate in section 01. */}
             <div className="za-dark-ground rounded-za-xl bg-za-evergreen p-7 text-za-on-dark shadow-za-lift sm:p-9">
               <p className="za-eyebrow text-za-on-dark-muted">
-                Founding Guardians — the goal
+                Founding Guardians: the goal
               </p>
               <p className="mt-4 font-display text-[clamp(3rem,2.2rem+3.6vw,4.75rem)] leading-none font-bold tracking-[-0.04em] text-za-gold tabular-nums">
                 1,000
@@ -101,7 +102,7 @@ export function GuardianCampaign() {
                     Given as
                   </dt>
                   <dd className="mt-1.5 text-[0.9375rem] text-za-on-dark">
-                    Recurring Sadaqah — never Zakah
+                    Recurring Sadaqah, never Zakah
                   </dd>
                 </div>
               </dl>
@@ -111,11 +112,12 @@ export function GuardianCampaign() {
 
         <SectionMedia media={sectionMedia.guardians} />
 
-        <ScriptureBlock
-          scripture={baqarah}
-          intro="Allah ﷻ commands us to give from the best of what we have earned:"
-          className="mt-16"
-        />
+        <Reveal className="mt-16">
+          <ScriptureBlock
+            scripture={baqarah}
+            intro="Allah ﷻ commands us to give from the best of what we have earned:"
+          />
+        </Reveal>
       </div>
     </Section>
   );

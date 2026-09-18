@@ -153,7 +153,7 @@ export function SupportTiers() {
           {rest.map((tier) => (
             <li
               key={tier.id}
-              className="flex flex-col rounded-za-lg border border-za-hairline bg-za-surface p-7 transition-[border-color,box-shadow] duration-300 hover:border-za-green/25 hover:shadow-za-card"
+              className="flex flex-col rounded-za-lg border border-za-hairline bg-za-surface p-7"
             >
               {/* Rendered on every card, filled on one: the reserved line keeps
                   all five prices on a common baseline while still naming the
