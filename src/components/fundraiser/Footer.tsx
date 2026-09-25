@@ -20,11 +20,6 @@ export function Footer() {
           <div>
             <Logo variant="inverse" className="h-10 w-auto" />
 
-            <p className="za-measure-tight mt-6 text-[0.9375rem] leading-relaxed text-za-dark-muted">
-              Independent charity audits and Zakah education: protecting the
-              donor, holding charities accountable, and safeguarding the rights
-              of those eligible to receive Zakah.
-            </p>
 
             <p className="mt-6 font-display text-[0.9375rem] font-semibold tracking-[0.02em] text-za-gold">
               {site.domain}

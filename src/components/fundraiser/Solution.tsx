@@ -4,21 +4,6 @@ import { SectionMedia } from "@/components/ui/SectionMedia";
 import { sectionMedia } from "@/content/fundraiser";
 import { sectionNumber, site } from "@/content/site";
 
-const bridge = [
-  {
-    label: "Orthodox Islamic scholarship",
-    note: "Classical Fiqh, applied without shortcuts.",
-  },
-  {
-    label: "Forensic financial auditing",
-    note: "Public filings, real numbers, no marketing.",
-  },
-  {
-    label: "Published transparency",
-    note: "Our methodology and sources, in the open.",
-  },
-];
-
 /** The turn from problem to solution. */
 export function Solution() {
   return (
@@ -68,18 +53,6 @@ export function Solution() {
 
         <SectionMedia media={sectionMedia.solution} />
 
-        <dl className="mt-14 grid gap-px overflow-hidden rounded-za-lg border border-za-hairline-dark bg-za-hairline-dark sm:grid-cols-3">
-          {bridge.map((item) => (
-            <div key={item.label} className="bg-za-evergreen p-7 lg:p-8">
-              <dt className="font-display text-[1.0625rem] leading-snug font-semibold text-za-on-dark">
-                {item.label}
-              </dt>
-              <dd className="mt-3 text-[0.9375rem] leading-relaxed text-za-on-dark-muted">
-                {item.note}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </Section>
   );

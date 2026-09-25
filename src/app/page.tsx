@@ -1,11 +1,9 @@
 import { Header } from "@/components/fundraiser/Header";
 import { Hero } from "@/components/fundraiser/Hero";
 import { WhyItMatters } from "@/components/fundraiser/WhyItMatters";
-import { DonorFears } from "@/components/fundraiser/DonorFears";
 import { Threats } from "@/components/fundraiser/Threats";
 import { Solution } from "@/components/fundraiser/Solution";
 import { RatingExample } from "@/components/fundraiser/RatingExample";
-import { AuditMethodology } from "@/components/fundraiser/AuditMethodology";
 import { Capabilities } from "@/components/fundraiser/Capabilities";
 import { Independence } from "@/components/fundraiser/Independence";
 import { GuardianCampaign } from "@/components/fundraiser/GuardianCampaign";
@@ -101,11 +99,9 @@ export default function FundraiserPage() {
       <main id="main">
         <Hero />
         <WhyItMatters />
-        <DonorFears />
         <Threats />
         <Solution />
         <RatingExample />
-        <AuditMethodology />
         <Capabilities />
         <Independence />
         <GuardianCampaign />

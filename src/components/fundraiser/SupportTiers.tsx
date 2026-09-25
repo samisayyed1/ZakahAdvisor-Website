@@ -11,9 +11,6 @@ import {
   missingDonationTiers,
 } from "@/lib/donate";
 
-const EBOOK_TITLE =
-  "Is your Zakah Valid? 37 Mistakes Most Muslims Make (And how to fix them)";
-
 function RewardList({
   rewards,
   tone = "light",
@@ -195,32 +192,6 @@ export function SupportTiers() {
           ))}
         </ul>
 
-        {/* The $25 publication, set as type rather than mocked up as a cover:
-            no approved cover artwork for it was supplied. */}
-        <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="rounded-za-lg border border-za-hairline bg-za-surface p-7 lg:p-9">
-            <p className="za-eyebrow text-za-gold-ink">
-              Included from $25 / month
-            </p>
-            <p className="mt-5 font-display text-[clamp(1.125rem,1rem+0.6vw,1.5rem)] leading-snug font-bold text-za-text">
-              “{EBOOK_TITLE}”
-            </p>
-            <p className="mt-4 text-[0.9375rem] text-za-muted">
-              A 174-page publication from Zakah Advisor.
-            </p>
-          </div>
-
-          <div className="rounded-za-lg border border-za-hairline bg-za-surface p-7 lg:p-9">
-            <p className="za-eyebrow text-za-gold-ink">Every tier</p>
-            <p className="mt-5 font-display text-[clamp(1.125rem,1rem+0.6vw,1.5rem)] leading-snug font-bold text-za-text">
-              Given as recurring Sadaqah, never as Zakah.
-            </p>
-            <p className="za-measure mt-4 text-[0.9375rem] text-za-muted">
-              Zakah has strict categories, and our operational costs do not fall
-              into them. Your obligatory charity stays where it belongs.
-            </p>
-          </div>
-        </div>
       </div>
     </Section>
   );

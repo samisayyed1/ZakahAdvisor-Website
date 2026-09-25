@@ -1,6 +1,5 @@
 import { AuditRings, AuditGrid } from "@/components/brand/Motifs";
-import { CtaButton, SecondaryLink } from "@/components/ui/CtaButton";
-import { ArrowDownIcon } from "@/components/brand/Icons";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 /**
  * Hero.
@@ -41,10 +40,6 @@ export function Hero() {
 
       <div className="za-shell">
         <div className="za-rise max-w-4xl">
-          <p className="za-eyebrow flex items-start gap-3 text-za-gold">
-            <span aria-hidden="true" className="mt-[0.58em] h-px w-7 bg-za-gold/60" />
-            An independent Zakah accountability initiative
-          </p>
 
           <h1 id="hero-title" className="za-h1 mt-6 text-za-on-dark">
             The $200 Billion Trust
@@ -66,10 +61,6 @@ export function Hero() {
 
           <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
             <CtaButton location="hero" className="w-full sm:w-auto" />
-            <SecondaryLink href="#solution" tone="dark">
-              See how we protect Zakah
-              <ArrowDownIcon className="size-4" />
-            </SecondaryLink>
           </div>
 
           {/* The approved copy pairs this line with every CTA, including this

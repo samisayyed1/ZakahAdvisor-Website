@@ -50,10 +50,11 @@ function EstimatePlate() {
 
       <div aria-hidden="true" className="my-7 h-px w-full bg-za-hairline-dark" />
 
+      {/* Verbatim from the source document. */}
       <p className="text-[1.0625rem] leading-snug text-za-on-dark">
-        On the raw numbers, theoretically more than enough to eradicate extreme
-        poverty across the Muslim world{" "}
-        <strong className="font-bold text-za-gold">twice over</strong>.
+        If you look at the raw numbers, this capital is theoretically more than
+        enough to eradicate extreme poverty across the Muslim world,{" "}
+        <strong className="font-bold text-za-gold">TWICE</strong>.
       </p>
 
       <p className="za-eyebrow mt-7 text-za-on-dark-muted">It is enough to</p>
