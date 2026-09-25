@@ -16,6 +16,7 @@ export type CtaLocation =
   | "header"
   | "hero"
   | "threats"
+  | "rating"
   | "independence"
   | "campaign"
   | "tiers"

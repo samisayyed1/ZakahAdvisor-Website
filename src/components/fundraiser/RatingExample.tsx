@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Section } from "@/components/ui/Section";
+import { CtaButton } from "@/components/ui/CtaButton";
 import { asset } from "@/content/site";
 
 /**
@@ -53,6 +54,16 @@ export function RatingExample() {
             Example of Zakah Advisor charity ratings.
           </figcaption>
         </figure>
+
+        {/* The source document places a call to action here, after the rating
+            figure. Its supporting line is the document's own wording. */}
+        <div className="mt-12">
+          <CtaButton location="rating" className="w-full sm:w-auto" />
+          <p className="za-measure-tight mt-4 text-sm text-za-muted">
+            Help us preserve the third pillar of Islam by funding our
+            independent charity audits and educational hubs.
+          </p>
+        </div>
       </div>
     </Section>
   );
