@@ -375,7 +375,6 @@ export type SectionMediaSlot =
   | "why-it-matters"
   | "threats"
   | "solution"
-  | "how-we-audit"
   | "capabilities"
   | "guardians";
 
@@ -415,14 +414,6 @@ export const sectionMedia: Record<SectionMediaSlot, SectionMediaAsset> = {
     height: 0,
     brief:
       "The bridge between orthodox scholarship and forensic auditing. Product or process imagery, not stock photography.",
-  },
-  "how-we-audit": {
-    src: null,
-    alt: "",
-    width: 0,
-    height: 0,
-    brief:
-      "The four-pillar methodology, drawn. A single diagram a reader can take at a glance without reading the four cards.",
   },
   capabilities: {
     src: null,

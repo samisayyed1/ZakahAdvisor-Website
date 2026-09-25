@@ -3,7 +3,7 @@ import { ScriptureBlock } from "@/components/ui/ScriptureBlock";
 import { Reveal } from "@/components/ui/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { SectionMedia } from "@/components/ui/SectionMedia";
-import { modernAssets, sectionMedia, threats } from "@/content/fundraiser";
+import { sectionMedia, threats } from "@/content/fundraiser";
 import { anfal } from "@/content/scripture";
 import { sectionNumber } from "@/content/site";
 
@@ -113,21 +113,6 @@ export function Threats() {
             </div>
           </div>
 
-          {/* Where classical Fiqh meets a modern balance sheet. Labels and
-              notes restate the asset classes named in the source copy and the
-              donor checklist — no new calculation rule is introduced. */}
-          <dl className="mt-12 grid gap-px overflow-hidden rounded-za-lg border border-za-hairline bg-za-hairline sm:grid-cols-2 lg:grid-cols-4">
-            {modernAssets.map((asset) => (
-              <div key={asset.label} className="bg-za-surface p-6 lg:p-7">
-                <dt className="font-display text-[1rem] leading-snug font-semibold text-za-green">
-                  {asset.label}
-                </dt>
-                <dd className="mt-3 text-[0.9375rem] leading-relaxed text-za-muted">
-                  {asset.note}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </article>
       </div>
     </Section>

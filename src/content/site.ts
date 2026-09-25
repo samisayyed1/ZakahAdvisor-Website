@@ -47,7 +47,6 @@ export const asset = rootHref;
 
 export const navItems = [
   { label: "Why It Matters", href: "#why-it-matters" },
-  { label: "How We Audit", href: "#how-we-audit" },
   { label: "Guardians", href: "#guardians" },
   { label: "FAQ", href: "#faq" },
 ] as const;
@@ -79,11 +78,8 @@ export const CTA_LABEL = "Donate Now";
  */
 export const sectionSequence = [
   "why-it-matters",
-  "donor-fears",
   "threats",
   "solution",
-  "rating-example",
-  "how-we-audit",
   "capabilities",
   "independence",
   "guardians",

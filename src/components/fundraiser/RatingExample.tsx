@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { Section, SectionHeading } from "@/components/ui/Section";
-import { asset, sectionNumber } from "@/content/site";
+import { Section } from "@/components/ui/Section";
+import { asset } from "@/content/site";
 
 /**
  * The charity rating card, extracted from the fundraiser document at its
@@ -12,18 +12,9 @@ import { asset, sectionNumber } from "@/content/site";
  */
 export function RatingExample() {
   return (
-    <Section tone="cream" labelledBy="rating-title">
+    <Section tone="cream" labelledBy="rating-caption">
       <div className="za-shell">
-        <SectionHeading
-          number={sectionNumber("rating-example")}
-          eyebrow="What an audit produces"
-          id="rating-title"
-          title="A rating you can actually read."
-          lede="Every audit resolves into a published rating: a grade per core area, a score out of 100, and the registration and eligibility facts behind them."
-          className="max-w-3xl"
-        />
-
-        <figure className="mt-14">
+        <figure>
           {/* Report frame ------------------------------------------------- */}
           <div className="overflow-hidden rounded-za-lg border border-za-hairline bg-za-surface shadow-za-card">
             <div className="flex items-center gap-2 border-b border-za-hairline bg-za-canvas px-4 py-3">
@@ -58,15 +49,8 @@ export function RatingExample() {
             </div>
           </div>
 
-          <figcaption className="mt-5 flex flex-col gap-2 text-sm text-za-muted sm:flex-row sm:items-baseline sm:justify-between">
-            <span>
-              <span className="font-medium text-za-text">Example</span> of Zakah
-              Advisor charity ratings. The four core areas shown correspond to
-              our published audit methodology.
-            </span>
-            <span className="shrink-0 text-za-muted lg:hidden">
-              Scroll the report horizontally to read it in full.
-            </span>
+          <figcaption id="rating-caption" className="mt-5 text-sm text-za-muted">
+            Example of Zakah Advisor charity ratings.
           </figcaption>
         </figure>
       </div>
